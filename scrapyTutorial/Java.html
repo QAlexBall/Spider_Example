@@ -1,0 +1,2726 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+
+
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="referrer" content="always" />
+<meta name="description" content="Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。Java具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点。Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等。...">
+<title>Java（计算机编程语言）_百度百科</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg">
+
+<meta name="keywords" content="Java javva Java发展历程 Java编程开发 Java语言特点 Java工作原理 Java语言基础 Java语言标准 Java语言规范 Java技术应用 Java学习指南 Java语言评价">
+<meta name="image" content="https://bkssl.bdimg.com/cms/static/baike.png">
+<script type="text/javascript">
+  // 配置 PD 监控。
+  window.alogObjectConfig = {
+    product: '103',
+    page: '103_1',
+    speed: {
+      sample: '0.008'
+    },
+    monkey: {
+      sample: '1',
+      hid: '1533'
+    },
+    exception: { 
+      sample: '0.004'
+    },
+    feature: {
+      sample: '0.004'
+    },
+    csp: {
+      sample: '0.008',
+      'default-src': [
+        {match: '*.baidu.com,*.bdimg.com,localhost', target: 'Accept'},
+        {match: '*', target: 'Accept,Warn'}
+      ]
+    }
+  };
+
+  void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+  void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>
+<meta name="csrf-token" content="">
+<meta itemprop="dateUpdate" content="2018-09-01 12:04:27" />
+
+<!--[if lte IE 9]>
+<script>
+    (function() {
+      var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(","),
+        i = e.length;
+      while (i--) {
+        document.createElement(e[i]);
+      }
+    })();
+  </script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma_63c8341.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/pkg/wiki-common-base_e013871.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/component/userbar-n/userbar-n_78dab81.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/lib/larkplayer/larkplayer_981c735.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-common/widget/lib/webuploader/webuploader_08d9db4.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma-module_65e90de.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index_c66d49f.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/announcement/announcement_cba33f4.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/label/label_ca156c6.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/newSideShare/sideShare_9c411cd.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/video/pageMask/pageMask_ff9a193.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/secondsKnow_8fa95ac.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/style/shCore_7fba49a.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/style/shCoreDefault_3f91dc3.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/mainContent_98e3702.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/lemmaRelation_ac86a59.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/zhixin/zhixin_3b0d7a5.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/toolButtons-n/toolButtons-n_6e90fdd.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/toolButtons-n/userInfo-n_7e90184.css"/><link rel="stylesheet" type="text/css" href="https://bkssl.bdimg.com/static/wiki-lemma/widget/tools/searchHeader/searchHeader-n_f9a6e5b.css"/>    
+</head>
+
+<script type="text/javascript">
+    alog('speed.set', 'ht', +new Date);
+</script>
+<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?55b574651fcae74b0a9f1cf9c8d7c93a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+<body class="wiki-lemma normal">
+
+
+<div class="header-wrapper pc-header-new">
+<div class="topbar cmn-clearfix">
+<ul class="wgt-userbar wgt-userbar-n" id="j-wgt-userbar">
+<li>
+<a href="http://www.baidu.com/">百度首页</a>
+</li>
+</ul>
+<div class="separator"></div>
+<div class="wiki-common-headTabBar">
+<a href="https://www.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://www.baidu.com/s?ie=utf-8&fr=bks0000&wd=">网页</a>
+<a href="http://news.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://news.baidu.com/ns?tn=news&cl=2&rn=20&ct=1&fr=bks0000&ie=utf-8&word=">新闻</a>
+<a href="https://tieba.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://tieba.baidu.com/f?ie=utf-8&fr=bks0000&kw=">贴吧</a>
+<a href="https://zhidao.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://zhidao.baidu.com/search?pn=0&&rn=10&lm=0&fr=bks0000&word=">知道</a>
+<a href="http://music.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://music.baidu.com/search?f=ms&ct=134217728&ie=utf-8&rn=&lm=-1&pn=30&fr=bks0000&key=">音乐</a>
+<a href="http://image.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=">图片</a>
+<a href="http://v.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://v.baidu.com/v?ct=301989888&rn=20&pn=0&db=0&s=22&ie=utf-8&fr=bks0000&word=">视频</a>
+<a href="http://map.baidu.com/" nslog="normal" nslog-type="10600112" data-href="http://map.baidu.com/m?ie=utf-8&fr=bks0000&word=">地图</a>
+<a href="https://wenku.baidu.com/" nslog="normal" nslog-type="10600112" data-href="https://wenku.baidu.com/search?lm=0&od=0&ie=utf-8&fr=bks0000&word=">文库</a>
+<b class="baike">百科</b>
+</div>
+</div>
+<div class="header">
+<div class="layout">
+<div class="wgt-searchbar wgt-searchbar-new wgt-searchbar-main cmn-clearfix wgt-searchbar-large">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" nslog="normal" nslog-type="10080011" name="word" type="text" autocomplete="off" autocorrect="off" value="Java" /><button id="search" nslog="normal" nslog-type="10080008" type="button">进入词条</button><button id="searchLemma" nslog="normal" nslog-type="10080009" type="button">全站搜索</button><a class="help" href="/help" nslog="normal" nslog-type="10080010" target="_blank">帮助</a>
+</form>
+<form id="searchLemmaForm" action="/search" method="GET" target="_self">
+<input id="searchLemmaQuery" name="word" type="hidden" />
+<input name="pn" type="hidden" value="0" />
+<input name="rn" type="hidden" value="0" />
+<input name="enc" type="hidden" value="utf8" />
+</form>
+<ul id="suggestion" class="suggestion">
+<div class="sug"></div>
+<li class="extra">
+<span id="clear" style="margin-right:8px;">清除历史记录</span><span id="close" nslog="normal" nslog-type="10080012">关闭</span>
+</li>
+</ul>
+</div></div>
+</div>
+<div class="declare-wrap" id="J-declare-wrap">
+<div class="declare" id="J-declare">声明：百科词条人人可编辑，词条创建和修改均免费，绝不存在官方及代理商付费代编，请勿上当受骗。<a class="declare-details" target="_blank" href="/common/declaration">详情>></a>
+<div class="close-btn" id="J-declare-close">
+<em class="cmn-icon cmn-icons cmn-icons_close"></em>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="navbar-wrapper">
+<div class="wgt-navbar">
+<div class="navbar-bg">
+<div class="navbar-bg-top">
+<div class="navbar-content layout">
+<div class="navbar-content-box">
+<dl class="index ">
+<dt><a href="/">首页</a></dt>
+<dd>
+<div><a href="/calendar/" target="_blank">历史上的今天</a></div>
+<div><a href="/vbaike/" target="_blank">百科冷知识</a></div>
+<div><a href="vbaike#gallary" target="_blank">图解百科</a></div>
+</dd>
+</dl>
+<dl class="cat ">
+<dt><a>分类</a></dt>
+<dd>
+<div><a href="/art" target="_blank" class="art">艺术</a></div>
+<div><a href="/science" target="_blank" class="technology">科学</a></div>
+<div><a href="/ziran" target="_blank">自然</a></div>
+<div><a href="/wenhua" target="_blank">文化</a></div>
+<div><a href="/dili" target="_blank">地理</a></div>
+<div><a href="/shenghuo" target="_blank">生活</a></div>
+<div><a href="/shehui" target="_blank">社会</a></div>
+<div><a href="/renwu" target="_blank">人物</a></div>
+<div><a href="/jingji" target="_blank">经济</a></div>
+<div><a href="/tiyu" target="_blank">体育</a></div>
+<div><a href="/lishi" target="_blank">历史</a></div>
+</dd>
+</dl>
+<dl class="special ">
+<dt><a>特色百科</a></dt>
+<dd><div><a href="/museum/" target="_blank">数字博物馆</a></div>
+<div><a href="/feiyi?fr=dhlfeiyi" target="_blank">非遗百科</a></div>
+<div><a href="/wikicategory/view?categoryName=多肉植物" target="_blank">多肉百科</a></div>
+<div><a href="/wikicategory/view?categoryName=恐龙大全" target="_blank">恐龙百科</a></div>
+<div><a href="/city/" target="_blank">城市百科</a></div>
+<div><a href="/operation/worldwar2" target="_blank">二战百科</a></div>
+</dd>
+</dl>
+<dl class="user" >
+<dt><a>用户</a></dt>
+<dd>
+<div><a href="/kedou/" target="_blank">蝌蚪团</a></div>
+<div><a href="/event/ranmeng/" target="_blank">燃梦计划</a></div>
+<div><a href="/task/" target="_blank">百科任务</a></div>
+<div><a href="/mall/" target="_blank">百科商城</a></div>
+</dd>
+</dl>
+<dl class="cooperation" >
+<dt><a>权威合作</a></dt>
+<dd>
+<div><a href="/operation/cooperation#joint" target="_blank">合作模式</a></div>
+<div><a href="/operation/cooperation#issue" target="_blank">常见问题</a></div>
+<div><a href="/operation/cooperation#connection" target="_blank">联系方式</a></div>
+</dd>
+</dl>
+<dl class="mobile" >
+<dt><a>手机百科</a></dt>
+<dd>
+<div><a href="/m#wap" target="_blank">网页版</a></div>
+</dd>
+</dl>
+<div class="usercenter">
+<div><a href="/usercenter" target="_blank"><em class="cmn-icon cmn-icons cmn-icons_navbar-usercenter"></em>个人中心</a></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="body-wrapper">
+<div class="before-content">
+<div id="lemmaWgt-secondsKnow" class="lemmaWgt-secondsKnow">
+<div class="lemmaWgt-secondsKnow-cnt">
+<div class="layout" style="width: 539px">
+<div class="lemmaWgt-secondsKnow-logo"></div>
+<ul class="lemmaWgt-secondsKnow-gallery">
+<li data-mediaId="mda-X11oPA8lgXMtZ6QW" data-secondId="205073">
+<a href="javascript:;">
+<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D400/sign=22f3e74e5ffbb2fb342b59127f4a2043/3bf33a87e950352abd41ca1b5943fbf2b2118b85.jpg" />
+<span class="video-shadow"></span>
+<span class="video-play"><em class="cmn-icon cmn-icons cmn-icons_videoPlayer-play"></em></span>
+<span class="video-title" title="解密Java编程开发">
+<span class="video-title-content">解密Java编程开发</span>
+<span class="video-title-vv"><em class="wiki-lemma-icons wiki-lemma-icons_eye"></em></span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="polysemant-list polysemant-list-normal">
+<div class="polysemantList-header">
+<div class="polysemantList-header-title">
+<b>Java</b>是一个<a href="/item/%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%EF%BC%9A%E5%A4%9A%E4%B9%89%E8%AF%8D" target="_blank">多义词</a>，请在下列<a href="/item/%E4%B9%89%E9%A1%B9" target="_blank">义项</a>上选择浏览（<a href="/item/Java?force=1" target="_blank">共2个义项</a>）</div>
+<a class="polysemantList-addButton" target="_blank" href="javascript:;" data-href="/createsub/Java">添加义项</a>
+</div>
+<ul class="polysemantList-wrapper cmn-clearfix" >
+<li class="item">▪<span class="selected">计算机编程语言</span></li>
+<li class="item">▪<a title="意大利自行车品牌" href='/item/java/13130360#viewPageContent'>意大利自行车品牌</a></li>
+</ul>
+</div>
+</div>
+<div class="content-wrapper">
+<div class="content">
+<div class="personal-content">
+</div>
+<div class="main-content">
+<a class="posterFlag excellent-icon" target="_blank" href="/tese" title="特色词条经过百科资深用户精心编写，是符合百科编辑精神的典范之作。"></a>
+<div class="top-tool">
+<a href="/divideload/Java" title="拆分词条" target="_blank" class="split-icon top-tool-icon" style="display:none;" nslog-type="50000104">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_lemma-split"></em>
+</a>
+<div class="top-collect top-tool-icon" nslog="area" nslog-type="50000102">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-solid"></em>
+<span class="collect-text">收藏</span>
+<div class="collect-tip">查看<a href="/uc/favolemma" target="_blank">我的收藏</a></div>
+</div>
+<a href="javascript:void(0);" id="j-top-vote" class="top-vote top-tool-icon" nslog-type="10060801">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-solid"></em>
+<span class="vote-count">0</span>
+<span class="vote-tip">有用+1</span>
+<span class="voted-tip">已投票</span>
+</a><div class="bksharebuttonbox top-share">
+<a class="top-share-icon top-tool-icon" nslog-type="9067">
+<em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_share"></em>
+<span class="share-count" id="j-topShareCount">0</span>
+</a>
+<div class="new-top-share" id="top-share">
+<ul class="top-share-list">
+<li class="top-share-item">
+<a class="share-link bds_qzone"  href="javascript:void(0);" nslog-type="10060501">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qzone"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="share-link bds_tsina" href="javascript:void(0);" nslog-type="10060701">
+<em class="cmn-icon cmn-icons cmn-icons_logo-sina-weibo"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="bds_wechat"  href="javascript:void(0);" nslog-type="10060401">
+<em class="cmn-icon cmn-icons cmn-icons_logo-wechat"></em>
+</a>
+</li>
+<li class="top-share-item">
+<a class="share-link bds_tqq"  href="javascript:void(0);" nslog-type="10060601">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qq"></em>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="width:0;height:0;clear:both"></div><dl class="lemmaWgt-lemmaTitle lemmaWgt-lemmaTitle-">
+<dd class="lemmaWgt-lemmaTitle-title">
+<h1 >Java</h1>
+<h2>（计算机编程语言）</h2>
+<a href="javascript:;" class="edit-lemma cmn-btn-hover-blue cmn-btn-28 j-edit-link"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+<a class="lock-lemma" nslog-type="10003105" target="_blank" href="/view/10812319.htm" title="锁定"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_lock-lemma"></em>锁定</a>
+</dd>
+</dl><div class="promotion-declaration">
+</div><div class="lemma-summary" label-module="lemmaSummary">
+<div class="para" label-module="para"><a target=_blank href="/item/Java/85979" data-lemmaid="85979">Java</a>是一门<a target=_blank href="/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>编程语言，不仅吸收了<a target=_blank href="/item/C%2B%2B">C++</a>语言的各种优点，还摒弃了C++里难以理解的<a target=_blank href="/item/%E5%A4%9A%E7%BB%A7%E6%89%BF">多继承</a>、<a target=_blank href="/item/%E6%8C%87%E9%92%88/2878304" data-lemmaid="2878304">指针</a>等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程<sup class="sup--normal" data-sup="1">
+[1]</sup><a class="sup-anchor" name="ref_[1]_12654100">&nbsp;</a>
+。</div><div class="para" label-module="para">Java具有简单性、面向对象、<a target=_blank href="/item/%E5%88%86%E5%B8%83%E5%BC%8F/19276232" data-lemmaid="19276232">分布式</a>、<a target=_blank href="/item/%E5%81%A5%E5%A3%AE%E6%80%A7/4430133" data-lemmaid="4430133">健壮性</a>、<a target=_blank href="/item/%E5%AE%89%E5%85%A8%E6%80%A7/7664678" data-lemmaid="7664678">安全性</a>、平台独立与可移植性、<a target=_blank href="/item/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1190404" data-lemmaid="1190404">多线程</a>、动态性等特点<sup class="sup--normal" data-sup="2">
+[2]</sup><a class="sup-anchor" name="ref_[2]_12654100">&nbsp;</a>
+。Java可以编写<a target=_blank href="/item/%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/2331979" data-lemmaid="2331979">桌面应用程序</a>、<a target=_blank href="/item/Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">Web应用程序</a>、<a target=_blank href="/item/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/4905336" data-lemmaid="4905336">分布式系统</a>和<a target=_blank href="/item/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F/186978" data-lemmaid="186978">嵌入式系统</a>应用程序等<sup class="sup--normal" data-sup="3">
+[3]</sup><a class="sup-anchor" name="ref_[3]_12654100">&nbsp;</a>
+。</div>
+</div>
+<div class="configModuleBanner">
+</div><div class="basic-info cmn-clearfix">
+<dl class="basicInfo-block basicInfo-left">
+<dt class="basicInfo-item name">外文名</dt>
+<dd class="basicInfo-item value">
+<a target=_blank href="/item/Java/85979" data-lemmaid="85979">Java</a>
+</dd>
+</dl><dl class="basicInfo-block basicInfo-right">
+<dt class="basicInfo-item name">现公司</dt>
+<dd class="basicInfo-item value">
+Oracle
+</dd>
+<dt class="basicInfo-item name">推出时间</dt>
+<dd class="basicInfo-item value">
+1995年5月
+</dd>
+</dl></div>
+<div class="lemmaWgt-lemmaCatalog">
+<div class="lemma-catalog">
+<h2 class="block-title">目录</h2>
+<div class="catalog-list column-4">
+<ol>
+<li class="level1">
+<span class="index">1</span>
+<span class="text"><a href="#1">发展历程</a></span>
+</li>
+<li class="level1">
+<span class="index">2</span>
+<span class="text"><a href="#2">编程开发</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_1">编程环境</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#2_2">编程工具</a></span>
+</li>
+<li class="level1">
+<span class="index">3</span>
+<span class="text"><a href="#3">语言特点</a></span>
+</li>
+</ol><ol><li class="level1">
+<span class="index">4</span>
+<span class="text"><a href="#4">工作原理</a></span>
+</li>
+<li class="level1">
+<span class="index">5</span>
+<span class="text"><a href="#5">语言基础</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#5_1">基本数据结构</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#5_2">关键字</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#5_3">运算符</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#5_4">程序举例</a></span>
+</li>
+</ol><ol><li class="level1">
+<span class="index">6</span>
+<span class="text"><a href="#6">语言标准</a></span>
+</li>
+<li class="level1">
+<span class="index">7</span>
+<span class="text"><a href="#7">语言规范</a></span>
+</li>
+<li class="level1">
+<span class="index">8</span>
+<span class="text"><a href="#8">技术应用</a></span>
+</li>
+<li class="level1">
+<span class="index">9</span>
+<span class="text"><a href="#9">学习指南</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#9_1">考试</a></span>
+</li>
+</ol><ol><li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#9_2">教材</a></span>
+</li>
+<li class="level1">
+<span class="index">10</span>
+<span class="text"><a href="#10">语言评价</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_1">发展前景</a></span>
+</li>
+<li class="level2">
+<span class="index">▪</span>
+<span class="text"><a href="#10_2">贡献及影响力</a></span>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="anchor-list">
+<a name="1" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_1" class="lemma-anchor " ></a>
+<a name="发展历程" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>发展历程</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="1" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:133px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/cefc1e178a82b901d3ed95f0748da9773812efb5?fr=lemma&ct=single" target="_blank"
+		title="JAVA" style="width:133px;height:220px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://b.hiphotos.baidu.com/baike/s%3D220/sign=3dbf1eedd51b0ef468e89f5cedc551a1/cefc1e178a82b901d3ed95f0748da9773812efb5.jpg"  alt="JAVA" style="width:133px;height:220px;"/>
+</a>
+<span class="description">
+JAVA
+</span>
+</div>20世纪90年代，硬件领域出现了单片式计算机系统，这种价格低廉的系统一出现就立即引起了自动控制领域人员的注意，因为使用它可以大幅度提升消费类电子产品<i>（如电视机顶盒、面包烤箱、移动电话等）</i>的<a target=_blank href="/item/%E6%99%BA%E8%83%BD%E5%8C%96">智能化</a>程度。Sun公司为了抢占市场先机，在1991年成立了一个称为Green的项目小组，<a target=_blank href="/item/%E5%B8%95%E7%89%B9%E9%87%8C%E5%85%8B/4831889" data-lemmaid="4831889">帕特里克</a>、<a target=_blank href="/item/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E9%AB%98%E6%96%AF%E6%9E%97">詹姆斯·高斯林</a>、麦克·舍林丹和其他几个工程师一起组成的工作小组在<a target=_blank href="/item/%E5%8A%A0%E5%88%A9%E7%A6%8F%E5%B0%BC%E4%BA%9A">加利福尼亚</a>州<a target=_blank href="/item/%E9%97%A8%E6%B4%9B%E5%B8%95%E5%85%8B">门洛帕克</a>市沙丘路的一个小工作室里面研究开发新技术，专攻计算机在家电产品上的嵌入式应用。</div>
+<div class="para" label-module="para">由于<a target=_blank href="/item/C%2B%2B">C++</a>所具有的优势，该项目组的研究人员首先考虑采用C++来编写程序。但对于<a target=_blank href="/item/%E7%A1%AC%E4%BB%B6">硬件</a>资源极其匮乏的单片式系统来说，C++程序过于复杂和庞大。另外由于消费电子产品所采用的嵌入式处理器芯片的种类繁杂，如何让编写的程序<a target=_blank href="/item/%E8%B7%A8%E5%B9%B3%E5%8F%B0">跨平台</a>运行也是个难题。为了解决困难，他们首先着眼于语言的开发，假设了一种结构简单、符合嵌入式应用需要的硬件平台体系结构并为其制定了相应的规范，其中就定义了这种硬件平台的<a target=_blank href="/item/%E4%BA%8C%E8%BF%9B%E5%88%B6">二进制</a>机器码指令系统<i>（即后来成为“</i><a target=_blank href="/item/%E5%AD%97%E8%8A%82%E7%A0%81"><i>字节码</i></a><i>”的指令系统）</i>，以待语言开发成功后，能有<a target=_blank href="/item/%E5%8D%8A%E5%AF%BC%E4%BD%93%E8%8A%AF%E7%89%87">半导体芯片</a>生产商开发和生产这种硬件平台。对于新语言的设计，Sun公司研发人员并没有开发一种全新的语言，而是根据嵌入式软件的要求，对C++进行了改造，去除了留在C++的一些不太实用及影响安全的成分，并结合嵌入式系统的实时性要求，开发了一种称为<a target=_blank href="/item/Oak">Oak</a>的<a target=_blank href="/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E8%A8%80">面向对象语言</a>。</div>
+<div class="para" label-module="para">由于在开发Oak语言时，尚且不存在运行字节码的硬件平台，所以为了在开发时可以对这种语言进行实验研究，他们就在已有的硬件和软件平台基础上，按照自己所指定的规范，用软件建设了一个运行平台，整个系统除了比C++更加简单之外，没有什么大的区别。1992年的夏天，当Oak语言开发成功后，研究者们向硬件生产商进行演示了Green操作系统、Oak的程序设计语言、类库和其硬件，以说服他们使用Oak语言生产硬件芯片，但是，硬件生产商并未对此产生极大的热情。因为他们认为，在所有人对Oak语言还一无所知的情况下，就生产硬件产品的风险实在太大了，所以Oak语言也就因为缺乏硬件的支持而无法进入市场，从而被搁置了下来。</div>
+<div class="para" label-module="para">1994年6、7月间，在经历了一场历时三天的讨论之后，团队决定再一次改变了努力的目标，这次他们决定将该技术应用于<a target=_blank href="/item/%E4%B8%87%E7%BB%B4%E7%BD%91">万维网</a>。他们认为随着<a target=_blank href="/item/Mosaic">Mosaic</a>浏览器的到来，<a target=_blank href="/item/%E5%9B%A0%E7%89%B9%E7%BD%91">因特网</a>正在向同样的高度互动的<a target=_blank href="/item/%E8%BF%9C%E6%99%AF">远景</a>演变，而这一远景正是他们在有线电视网中看到的。作为原型，帕特里克·诺顿写了一个小型万维网浏览器WebRunner。<sup class="sup--normal" data-sup="4">
+[4]</sup><a class="sup-anchor" name="ref_[4]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">1995年，互联网的蓬勃发展给了Oak机会。业界为了使死板、单调的静态网页能够“灵活”起来，急需一种软件技术来开发一种程序，这种程序可以通过网络传播并且能够跨平台运行。于是，世界各大<a target=_blank href="/item/IT/16684878" data-lemmaid="16684878">IT</a>企业为此纷纷投入了大量的人力、物力和财力。这个时候，Sun公司想起了那个被搁置起来很久的Oak，并且重新审视了那个用软件编写的试验平台，由于它是按照嵌入式系统硬件平台体系结构进行编写的，所以非常小，特别适用于网络上的传输系统，而Oak也是一种精简的语言，程序非常小，适合在网络上传输。Sun公司首先推出了可以嵌入网页并且可以随同网页在网络上传输的<a target=_blank href="/item/Applet">Applet</a><i>（Applet是一种将小程序嵌入到网页中进行执行的技术）</i>，并将Oak更名为Java<i>（在申请注册商标时，发现Oak已经被人使用了，再想了一系列名字之后，最终，使用了提议者在喝一杯Java咖啡时无意提到的Java词语）</i>。5月23日，Sun公司在Sun world会议上正式发布Java和HotJava浏览器。<a target=_blank href="/item/IBM/9190" data-lemmaid="9190">IBM</a>、<a target=_blank href="/item/Apple/3860362" data-lemmaid="3860362">Apple</a>、<a target=_blank href="/item/DEC">DEC</a>、<a target=_blank href="/item/Adobe">Adobe</a>、<a target=_blank href="/item/HP">HP</a>、<a target=_blank href="/item/Oracle">Oracle</a>、<a target=_blank href="/item/Netscape">Netscap<b>e</b></a>和<a target=_blank href="/item/%E5%BE%AE%E8%BD%AF">微软</a>等各大公司都纷纷停止了自己的相关开发项目，竞相购买了Java使用许可证，并为自己的产品开发了相应的Java平台。<sup class="sup--normal" data-sup="5-6">
+[5-6]</sup><a class="sup-anchor" name="ref_[5-6]_12654100">&nbsp;</a>
+<a name="ref_6"></a></div>
+<div class="para" label-module="para">1996年1月，Sun公司发布了Java的第一个开发工具包<i>（JDK 1.0）</i>，这是Java发展历程中的重要里程碑，标志着Java成为一种独立的开发工具。9月，约8.3万个网页应用了Java技术来制作。10月，Sun公司发布了Java平台的第一个即时<i>（JIT）</i>编译器。</div>
+<div class="para" label-module="para">1997年2月，JDK 1.1面世，在随后的3周时间里，达到了22万次的下载量。4月2日，Java One会议召开，参会者逾一万人，创当时全球同类会议规模之纪录。9月，Java Developer Connection社区成员超过10万。</div>
+<div class="para" label-module="para">1998年12月8日，第二代Java平台的企业版J2EE发布。1999年6月，Sun公司发布了第二代Java平台（简称为Java2）的3个版本：<a target=_blank href="/item/J2ME">J2ME</a>（Java2 Micro Edition，Java2平台的微型版），应用于移动、无线及有限资源的环境；<a target=_blank href="/item/J2SE">J2SE</a>（Java 2 Standard Edition，Java 2平台的标准版），应用于桌面环境；<a target=_blank href="/item/J2EE">J2EE</a>（Java 2Enterprise Edition，Java 2平台的企业版），应用于基于Java的应用服务器。Java 2平台的发布，是Java发展过程中最重要的一个里程碑，标志着Java的应用开始普及。</div>
+<div class="para" label-module="para">1999年4月27日，HotSpot虚拟机发布。<a target=_blank href="/item/HotSpot">HotSpot</a>虚拟机发布时是作为JDK 1.2的附加程序提供的，后来它成为了JDK 1.3及之后所有版本的Sun JDK的默认虚拟机<sup class="sup--normal" data-sup="7">
+[7]</sup><a class="sup-anchor" name="ref_[7]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">2000年5月，JDK1.3、JDK1.4和J2SE1.3相继发布，几周后其获得了<a target=_blank href="/item/Apple/3860362" data-lemmaid="3860362">Apple</a>公司Mac OS X的工业标准的支持。2001年9月24日，J2EE1.3发布。2002年2月26日，J2SE1.4发布。自此Java的计算能力有了大幅提升，与J2SE1.3相比，其多了近62%的类和接口。在这些新特性当中，还提供了广泛的<a target=_blank href="/item/XML">XML</a>支持、安全套接字<i>（Socket）</i>支持<i>（通过SSL与TLS协议）</i>、全新的I/OAPI、正则表达式、日志与断言。2004年9月30日，J2SE1.5发布，成为Java语言发展史上的又一里程碑。为了表示该版本的重要性，J2SE 1.5更名为Java SE 5.0<i>（内部版本号1.5.0）</i>，代号为“Tiger”，Tiger包含了从1996年发布1.0版本以来的最重大的更新，其中包括泛型支持、基本类型的自动装箱、改进的循环、枚举类型、格式化I/O及可变参数。</div>
+<div class="para" label-module="para">2005年6月，在Java One大会上，Sun公司发布了Java SE 6。此时，Java的各种版本已经更名，已取消其中的数字2，如J2EE更名为<a target=_blank href="/item/JavaEE">JavaEE</a>，J2SE更名为JavaSE，J2ME更名为<a target=_blank href="/item/JavaME">JavaME</a>。<sup class="sup--normal" data-sup="8">
+[8]</sup><a class="sup-anchor" name="ref_[8]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">2006年11月13日，Java技术的发明者Sun公司宣布，将Java技术作为免费软件对外发布。Sun公司正式发布的有关Java平台标准版的第一批源代码，以及Java迷你版的可执行源代码。从2007年3月起，全世界所有的开发人员均可对Java源代码进行修改<sup class="sup--normal" data-sup="9">
+[9]</sup><a class="sup-anchor" name="ref_[9]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/a8ec8a13632762d04989f67ca7ec08fa503dc6ba?fr=lemma&ct=single" target="_blank"
+		title="Java创始人之一：詹姆斯·高斯林" style="width:220px;height:208px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://g.hiphotos.baidu.com/baike/s%3D220/sign=b4dfd4eaecc4b7453094b014fffd1e78/a8ec8a13632762d04989f67ca7ec08fa503dc6ba.jpg"  alt="Java创始人之一：詹姆斯·高斯林" style="width:220px;height:208px;"/>
+</a>
+<span class="description">
+Java创始人之一：詹姆斯·高斯林
+</span>
+</div>2009年，甲骨文公司宣布收购Sun<sup class="sup--normal" data-sup="10">
+[10]</sup><a class="sup-anchor" name="ref_[10]_12654100">&nbsp;</a>
+。2010年，Java编程语言的共同创始人之一詹姆斯·高斯林从Oracle公司辞职。2011年，甲骨文公司举行了全球性的活动，以庆祝Java7的推出，随后Java7正式发布。2014年，甲骨文公司发布了Java8正式版<sup class="sup--normal" data-sup="11">
+[11]</sup><a class="sup-anchor" name="ref_[11]_12654100">&nbsp;</a>
+。</div><div class="anchor-list">
+<a name="2" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_2" class="lemma-anchor " ></a>
+<a name="编程开发" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>编程开发</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="2" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="anchor-list">
+<a name="2_1" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_2_1" class="lemma-anchor " ></a>
+<a name="编程环境" class="lemma-anchor " ></a>
+<a name="2-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>编程环境</h3>
+</div>
+<div class="para" label-module="para"></div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:220px; cursor: move; text-indent: 28px; white-space: normal; display: block; margin: 0px auto; clear: both; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/024f78f0f736afc3646ddea1b419ebc4b6451294?fr=lemma&ct=single" target="_blank"
+		title="Java概念图" style="width:220px;height:147px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://f.hiphotos.baidu.com/baike/s%3D220/sign=6fd793e4be12c8fcb0f3f1cfcc0292b4/024f78f0f736afc3646ddea1b419ebc4b6451294.jpg"  alt="Java概念图" style="width:220px;height:147px;"/>
+</a>
+<span class="description">
+Java概念图
+<sup>[12]</sup>
+<a name="ref_[12]_"></a>
+</span>
+</div></div>
+<div class="para" label-module="para"><a target=_blank href="/item/JDK/1011" data-lemmaid="1011">JDK</a><i>（Java Development Kit）</i>称为Java开发包或Java开发工具，是一个编写Java的Applet小程序和应用程序的程序开发环境。JDK是整个Java的核心，包括了Java运行环境<i>（Java Runtime Envirnment）</i>，一些Java工具和Java的核心类库<i>（Java API）</i>。不论什么Java应用服务器实质都是内置了某个版本的JDK。主流的JDK是Sun公司发布的JDK，除了Sun之外，还有很多公司和组织都开发了自己的JDK，例如，IBM公司开发的JDK，BEA公司的Jrocket，还有GNU组织开发的JDK<sup class="sup--normal" data-sup="13">
+[13]</sup><a class="sup-anchor" name="ref_[13]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">另外，可以把<a target=_blank href="/item/Java%20API">Java API</a>类库中的Java SE API子集和Java虚拟机这两部分统称为<a target=_blank href="/item/JRE">JRE</a><i>（JAVA Runtime Environment）</i>，<a target=_blank href="/item/JRE">JRE</a>是支持Java程序运行的标准环境<sup class="sup--normal" data-sup="14">
+[14]</sup><a class="sup-anchor" name="ref_[14]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">JRE是个运行环境，JDK是个开发环境。因此写Java程序的时候需要JDK，而运行Java程序的时候就需要JRE。而JDK里面已经包含了JRE，因此只要安装了JDK，就可以编辑Java程序，也可以正常运行Java程序。但由于JDK包含了许多与运行无关的内容，占用的空间较大，因此运行普通的Java程序无须安装JDK，而只需要安装JRE即可<sup class="sup--normal" data-sup="15">
+[15]</sup><a class="sup-anchor" name="ref_[15]_12654100">&nbsp;</a>
+。</div><div class="anchor-list">
+<a name="2_2" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_2_2" class="lemma-anchor " ></a>
+<a name="编程工具" class="lemma-anchor " ></a>
+<a name="2-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>编程工具</h3>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/Eclipse/61703" data-lemmaid="61703">Eclipse</a>：一个开放源代码的、基于Java的可扩展开发平台<sup class="sup--normal" data-sup="16">
+[16]</sup><a class="sup-anchor" name="ref_[16]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para"><a target=_blank href="/item/NetBeans">NetBeans</a>：开放源码的Java集成开发环境，适用于各种客户机和Web应用。</div>
+<div class="para" label-module="para"><a target=_blank href="/item/IntelliJ%20IDEA">IntelliJ IDEA</a>：在代码自动提示、代码分析等方面的具有很好的功能。<sup class="sup--normal" data-sup="17">
+[17]</sup><a class="sup-anchor" name="ref_[17]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/MyEclipse">MyEclipse</a>：由<a target=_blank href="/item/Genuitec">Genuitec</a>公司开发的一款商业化软件，是应用比较广泛的Java应用程序集成开发环境<sup class="sup--normal" data-sup="18">
+[18]</sup><a class="sup-anchor" name="ref_[18]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para"><a target=_blank href="/item/EditPlus">EditPlus</a>：如果正确配置Java的<a target=_blank href="/item/%E7%BC%96%E8%AF%91%E5%99%A8">编译器</a>“<a target=_blank href="/item/Javac">Javac</a>”以及解释器“Java”后，可直接使用EditPlus编译执行Java程序<sup class="sup--normal" data-sup="19">
+[19]</sup><a class="sup-anchor" name="ref_[19]_12654100">&nbsp;</a>
+。</div><div class="anchor-list">
+<a name="3" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_3" class="lemma-anchor " ></a>
+<a name="语言特点" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>语言特点</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="3" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para"><b>1.简单性</b></div>
+<div class="para" label-module="para">Java看起来设计得很像<a target=_blank href="/item/C%2B%2B">C++</a>，但是为了使语言小和容易熟悉，设计者们把C++语言中许多可用的特征去掉了，这些特征是一般程序员很少使用的。例如，Java不支持go to语句，代之以提供<a target=_blank href="/item/break/405784" data-lemmaid="405784">break</a>和<a target=_blank href="/item/continue/3009735" data-lemmaid="3009735">continue</a>语句以及异常处理。Java还剔除了C++的操作符过载<i>（</i><a target=_blank href="/item/overload"><i>overload</i></a><i>）</i>和多继承特征，并且不使用主文件，免去了预处理程序。因为Java没有结构，数组和串都是对象，所以不需要指针。Java能够自动处理对象的引用和间接引用，实现自动的无用单元收集，使用户不必为存储管理问题烦恼，能更多的时间和精力花在研发上。</div>
+<div class="para" label-module="para"><b>2.面向对象</b></div>
+<div class="para" label-module="para">Java是一个面向对象的语言。对程序员来说，这意味着要注意应中的数据和操纵数据的方法<i>（method）</i>，而不是严格地用过程来思考。在一个面向对象的系统中，类<i>（<a target=_blank href="/item/class/12502737" data-lemmaid="12502737">class</a>）</i>是数据和操作数据的方法的集合。数据和方法一起描述对象<i>（object）</i>的状态和行为。每一对象是其状态和行为的封装。类是按一定体系和层次安排的，使得子类可以从超类继承行为。在这个类层次体系中有一个根类，它是具有一般行为的类。Java程序是用类来组织的。</div>
+<div class="para" label-module="para">Java还包括一个类的扩展集合，分别组成各种程序包<i>（<a target=_blank href="/item/Package">Package</a>）</i>，用户可以在自己的程序中使用。例如，Java提供产生图形用户接口部件的类<i>（<a target=_blank href="/item/java.awt">java.awt</a>包）</i>，这里awt是抽象窗口工具集<i>（abstract windowing toolkit）</i>的缩写，处理输入输出的类<i>（<a target=_blank href="/item/java.io">java.io</a>包）</i>和支持网络功能的类<i>（<a target=_blank href="/item/java.net">java.net</a>包）</i>。</div>
+<div class="para" label-module="para"><b>3.分布性</b></div>
+<div class="para" label-module="para">Java设计成支持在网络上应用，它是分布式语言。Java既支持各种层次的网络连接，又以Socket类支持可靠的流<i>（<a target=_blank href="/item/stream">stream</a>）</i>网络连接，所以用户可以产生分布式的客户机和服务器。</div>
+<div class="para" label-module="para">网络变成软件应用的分布运载工具。Java程序只要编写一次，就可到处运行。</div>
+<div class="para" label-module="para"><b>4.编译和解释性</b></div>
+<div class="para" label-module="para">Java编译程序生成字节码<i>（byte-code）</i>，而不是通常的机器码。Java字节码提供对体系结构中性的目标文件格式，代码设计成可有效地传送程序到多个平台。Java程序可以在任何实现了Java解释程序和运行系统<i>（run-time system）</i>的系统上运行。</div>
+<div class="para" label-module="para">在一个解释性的环境中，程序开发的标准“链接”阶段大大消失了。如果说Java还有一个链接阶段，它只是把新类装进环境的过程，它是增量式的、<a target=_blank href="/item/%E8%BD%BB%E9%87%8F%E7%BA%A7/10002835" data-lemmaid="10002835">轻量级</a>的过程。因此，Java支持快速原型和容易试验，它将导致快速程序开发。这是一个与传统的、耗时的“编译、链接和测试”形成鲜明对比的精巧的开发过程。</div>
+<div class="para" label-module="para"><b>5.稳健性</b></div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:220px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/e850352ac65c10385ec9bce0bf119313b07e8958?fr=lemma&ct=single" target="_blank"
+		title="Java" style="width:220px;height:176px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://f.hiphotos.baidu.com/baike/s%3D220/sign=ad664fe85c3d26972ad30f5f65fab24f/e850352ac65c10385ec9bce0bf119313b07e8958.jpg"  alt="Java" style="width:220px;height:176px;"/>
+</a>
+<span class="description">
+Java
+</span>
+</div>Java原来是用作编写消费类家用电子产品软件的语言，所以它是被设计成写高可靠和稳健软件的。Java消除了某些编程错误，使得用它写可靠软件相当容易。</div>
+<div class="para" label-module="para">Java是一个强类型语言，它允许扩展编译时检查潜在类型不匹配问题的功能。Java要求显式的方法声明，它不支持C风格的<a target=_blank href="/item/%E9%9A%90%E5%BC%8F%E5%A3%B0%E6%98%8E">隐式声明</a>。这些严格的要求保证编译程序能捕捉调用错误，这就导致更可靠的程序。</div>
+<div class="para" label-module="para">可靠性方面最重要的增强之一是Java的存储模型。Java不支持指针，它消除重写存储和<a target=_blank href="/item/%E8%AE%B9%E8%AF%AF">讹误</a>数据的可能性。类似地，Java自动的“无用单元收集”预防存储漏泄和其它有关动态存储分配和解除分配的有害错误。Java解释程序也执行许多运行时的检查，诸如验证所有数组和串访问是否在界限之内。</div>
+<div class="para" label-module="para">异常处理是Java中使得程序更稳健的另一个特征。异常是某种类似于错误的异常条件出现的信号。使用try/catch/finally语句，程序员可以找到出错的处理代码，这就简化了出错处理和恢复的任务。</div>
+<div class="para" label-module="para"><b>6.安全性</b></div>
+<div class="para" label-module="para">Java的存储分配模型是它防御<a target=_blank href="/item/%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81">恶意代码</a>的主要方法之一。Java没有指针，所以程序员不能得到隐蔽起来的内幕和伪造指针去指向<a target=_blank href="/item/%E5%AD%98%E5%82%A8%E5%99%A8">存储器</a>。更重要的是，Java编译程序不处理存储安排决策，所以程序员不能通过查看<a target=_blank href="/item/%E5%A3%B0%E6%98%8E/13130358" data-lemmaid="13130358">声明</a>去猜测类的实际存储安排。编译的Java代码中的存储引用在运行时由Java解释程序决定实际存储地址。</div>
+<div class="para" label-module="para">Java运行系统使用字节码验证过程来保证装载到网络上的代码不违背任何Java语言限制。这个安全机制部分包括类如何从网上装载。例如，装载的类是放在分开的名字空间而不是局部类，预防恶意的小应用程序用它自己的版本来代替标准Java类。</div>
+<div class="para" label-module="para"><b>7.可移植性</b></div>
+<div class="para" label-module="para">Java使得语言声明不依赖于实现的方面。例如，Java显式说明每个基本数据类型的大小和它的运算行为<i>（这</i><i>些数据类型由Java语法描述）</i>。</div>
+<div class="para" label-module="para">Java环境本身对新的硬件平台和操作系统是可移植的。Java编译程序也用Java编写，而Java运行系统用ANSIC语言编写。</div>
+<div class="para" label-module="para"><b>8.高性能</b></div>
+<div class="para" label-module="para">Java是一种先编译后解释的语言，所以它不如全编译性语言快。但是有些情况下性能是很要紧的，为了支持这些情况，Java设计者制作了“及时”编译程序，它能在运行时把Java字节码翻译成特定<a target=_blank href="/item/CPU">CPU</a><i>（中央处理器）</i>的机器代码，也就是实现全编译了。</div>
+<div class="para" label-module="para">Java字节码格式设计时考虑到这些“及时”编译程序的需要，所以生成机器代码的过程相当简单，它能产生相当好的代码。</div>
+<div class="para" label-module="para"><b>9.多线索性</b></div>
+<div class="para" label-module="para">Java是多线索语言，它提供支持多线索的执行<i>（也称为轻便过程）</i>，能处理不同任务，使具有线索的程序设计很容易。Java的lang包提供一个<a target=_blank href="/item/Thread/5156974" data-lemmaid="5156974">Thread</a>类，它支持开始线索、运行线索、停止线索和检查线索状态的方法。</div>
+<div class="para" label-module="para">Java的线索支持也包括一组同步原语。这些原语是基于监督程序和条件变量风范，由C.A.R.Haore开发的广泛使用的同步化方案。用关键词<a target=_blank href="/item/synchronized">synchronized</a>，程序员可以说明某些方法在一个类中不能并发地运行。这些方法在监督程序控制之下，确保变量维持在一个一致的状态。</div>
+<div class="para" label-module="para"><b>10.动态性</b></div>
+<div class="para" label-module="para">Java语言设计成适应于变化的环境，它是一个动态的语言。例如，Java中的类是根据需要载入的，甚至有些是通过网络获取的。<sup class="sup--normal" data-sup="20">
+[20]</sup><a class="sup-anchor" name="ref_[20]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="4" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_4" class="lemma-anchor " ></a>
+<a name="工作原理" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>工作原理</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="4" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:250px; cursor: move; text-indent: 28px; white-space: normal; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/e7cd7b899e510fb3023e9053de33c895d0430cca?fr=lemma&ct=single" target="_blank"
+		title="工作原理" style="width:250px;height:121px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://f.hiphotos.baidu.com/baike/s%3D250/sign=4c2e45fe374e251fe6f7e3fd9787c9c2/e7cd7b899e510fb3023e9053de33c895d0430cca.jpg"  alt="工作原理" style="width:250px;height:121px;"/>
+</a>
+<span class="description">
+工作原理
+</span>
+</div>由四方面组成：</div>
+<div class="para" label-module="para">（1）Java编程语言</div>
+<div class="para" label-module="para">（2）Java类文件格式</div>
+<div class="para" label-module="para">（3）Java虚拟机</div>
+<div class="para" label-module="para">（4）Java应用程序接口<sup class="sup--normal" data-sup="21">
+[21]</sup><a class="sup-anchor" name="ref_[21]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">当编辑并运行一个Java程序时，需要同时涉及到这四种方面。使用文字编辑软件<i>（例如</i><a target=_blank href="/item/%E8%AE%B0%E4%BA%8B%E6%9C%AC/2519" data-lemmaid="2519"><i>记事本</i></a><i>、</i><a target=_blank href="/item/%E5%86%99%E5%AD%97%E6%9D%BF"><i>写字板</i></a><i>、</i><a target=_blank href="/item/UltraEdit"><i>UltraEdit</i></a><i>等）</i>或集成开发环境<i>（</i><a target=_blank href="/item/Eclipse/61703" data-lemmaid="61703"><i>Eclipse</i></a><i>、<a target=_blank href="/item/MyEclipse">MyEclipse</a>等）</i>在Java源文件中定义不同的类<sup class="sup--normal" data-sup="22">
+[22]</sup><a class="sup-anchor" name="ref_[22]_12654100">&nbsp;</a>
+，通过调用类<i>（这些类实现了Java API）</i>中的方法来访问资源系统，把源文件编译生成一种二进制中间码，存储在class文件中，然后再通过运行与操作系统平台环境相对应的Java虚拟机来运行class文件，执行编译产生的字节码，调用class文件中实现的方法来满足程序的Java API调用<sup class="sup--normal" data-sup="6">
+[6]</sup><a class="sup-anchor" name="ref_[6]_12654100">&nbsp;</a>
+<a name="ref_6"></a>。</div><div class="anchor-list">
+<a name="5" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_5" class="lemma-anchor " ></a>
+<a name="语言基础" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>语言基础</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="5" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para"><i></i></div><div class="anchor-list">
+<a name="5_1" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_5_1" class="lemma-anchor " ></a>
+<a name="基本数据结构" class="lemma-anchor " ></a>
+<a name="5-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>基本数据结构</h3>
+</div>
+<div class="para" label-module="para">在Java中有8种数据类型来存储数值、<a target=_blank href="/item/%E5%AD%97%E7%AC%A6">字符</a>和<a target=_blank href="/item/%E5%B8%83%E5%B0%94%E5%80%BC">布尔值</a>。</div>
+<div class="para" label-module="para"><b>整数类型</b></div>
+<div class="para" label-module="para">整数型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在Java程序中有3种表示形式，分别为<a target=_blank href="/item/%E5%8D%81%E8%BF%9B%E5%88%B6">十进制</a>、<a target=_blank href="/item/%E5%85%AB%E8%BF%9B%E5%88%B6">八进制</a>和<a target=_blank href="/item/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6">十六进制</a>。</div>
+<div class="para" label-module="para">整型数据根据它所占内容大小的不同可分为4种类型。</div>
+<table log-set-param="table_view" data-sort="sortDisabled"><tr><th>数据类型</th><th>内存</th></tr><tr><td width="327" valign="middle">byte</td><td width="328" valign="middle">8位</td></tr><tr><td width="327" valign="middle">short</td><td width="328" valign="middle">16位</td></tr><tr><td width="327" valign="middle">int</td><td width="328" valign="middle">32位</td></tr><tr><td width="327" valign="middle">long</td><td width="328" valign="middle">64位</td></tr></table><div class="para" label-module="para"><b>浮点类型</b></div>
+<table log-set-param="table_view" class="table-view log-set-param"><tr><th>数据类型</th><th>内存</th></tr><tr><td width="327" valign="top">float</td><td width="327" valign="top">32位</td></tr><tr><td width="327" valign="top">double</td><td width="327" valign="top">64位</td></tr></table><div class="para" label-module="para"><b>字符类型</b></div>
+<div class="para" label-module="para">字符类型用于存储单个字符，占用16位（两个字节）的内存空间。在定义字符型变量时，要以单引号表示。使用<a target=_blank href="/item/char/5156054" data-lemmaid="5156054">char</a>关键字可定义字符变量。</div>
+<table log-set-param="table_view" data-sort="sortDisabled"><tr><th>数据类型</th><th>内存</th></tr><tr><td width="327" valign="middle">char</td><td width="328" valign="middle">16位</td></tr></table><div class="para" label-module="para"><b>布尔类型</b></div>
+<div class="para" label-module="para">布尔类型又称逻辑类型，通过关键字<a target=_blank href="/item/boolean">boolean</a>来定义布尔类型变量，只有只有true和false两个取值，分别代表布尔逻辑中的“真”和“假”。布尔类型通常被用在流程控制中作为判断条件。</div><div class="anchor-list">
+<a name="5_2" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_5_2" class="lemma-anchor " ></a>
+<a name="关键字" class="lemma-anchor " ></a>
+<a name="5-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>关键字</h3>
+</div>
+<table log-set-param="table_view" class="reference" data-sort="sortDisabled"><tr><th><div class="para" label-module="para">关键字</div>
+</th><th><div class="para" label-module="para">含义</div>
+</th></tr><tr><td width="200" align="left" valign="top">abstract</td><td width="282" align="left" valign="top"><div class="para" label-module="para">抽象类或方法</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">assert</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">用来查找内部程序错误</div>
+</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">break</td><td align="left" valign="top" colspan="1" rowspan="1">跳出一个switch或循环</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">byte</td><td align="left" valign="top" colspan="1" rowspan="1">8位整数类型</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">case</td><td align="left" valign="top" colspan="1" rowspan="1">switch的一个分支</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1"><div class="para" label-module="para">catch</div>
+</td><td align="left" valign="top" colspan="1" rowspan="1"><div class="para" label-module="para">捕获异常的try块子句</div>
+</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">class</td><td align="left" valign="top" colspan="1" rowspan="1">定义一个类类型</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">continue</td><td align="left" valign="top" colspan="1" rowspan="1">在循环末尾继续</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">default</td><td align="left" valign="top" colspan="1" rowspan="1">switch的缺省语句</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">do</td><td align="left" valign="top" colspan="1" rowspan="1">do/while循环最前面的语句</td></tr><tr><td align="left" valign="top" colspan="1" rowspan="1">double</td><td align="left" valign="top" colspan="1" rowspan="1">双精度浮点数类型</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">else</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">if语句的else子句</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">enum</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">枚举类型</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">extends</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">定义一个类的父类</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">final</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">一个常量，或不能覆盖的一个类或方法</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">finally</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">try块中总会执行的部分</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">float</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">单精度浮点数类型</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">for</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">一个循环类型</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">if</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">一个条件语句</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">implements</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">定义一个类实现的接口</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">import</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">导入一个包</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">instanceof</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">测试一个对象是否是某个类的实例</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">int</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">32位整型数</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">interface</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">接口，一种抽象类型，仅有方法和常量的定义</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">long</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">64位长整数型</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">native</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">由宿主系统实现的一个方法</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">new</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">分配新的类实例</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">null</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">一个空引用</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">package</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">包含类的一个包</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">private</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">表示私有字段，或者方法等，只能从类内部访问</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">protected</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">表示保护类型字段</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">public</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">表示共有属性或者方法</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">return</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">从一个方法中返回</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">short</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">16位整数类型</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">static</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">这个特性是这个类特有的，而不属于这个类的对象</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">strictfp</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">对浮点数计算使用严格的规则</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">super</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">超类对象或构造函数</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">switch</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">选择语句</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">synchronized</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">对线程而言是原子的方法或代码块</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">this</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">当前类的一个方法或构造函数的隐含参数</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">throw</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">抛出一个异常</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">throws</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">一个方法可能抛出的异常</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">transient</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">标志非永久性的数据</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">try</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">捕获异常的代码块</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">void</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">标记方法不返回任何值</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">volatile</div>
+</td><td width="500" align="left" valign="top"><div class="para" label-module="para">标记字段可能会被多个线程同时访问，而不做同步</div>
+</td></tr><tr><td width="202" align="left" valign="top"><div class="para" label-module="para">while</div>
+</td><td width="500" align="left" valign="top">一种循环</td></tr></table><div class="para" label-module="para"><i>关键字参考资料</i><i>来源<sup class="sup--normal" data-sup="23">
+[23]</sup><a class="sup-anchor" name="ref_[23]_12654100">&nbsp;</a>
+</i></div>
+<div class="para" label-module="para"><i></i></div><div class="anchor-list">
+<a name="5_3" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_5_3" class="lemma-anchor " ></a>
+<a name="运算符" class="lemma-anchor " ></a>
+<a name="5-3" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>运算符</h3>
+</div>
+<div class="para" label-module="para">运算符是一些特殊的符号，主要用于数学函数、一些类型的赋值语句和逻辑比较方面。</div>
+<div class="para" label-module="para"><b>赋值运算符</b></div>
+<div class="para" label-module="para">赋值运算符以符号“=”表示，它是一个二元运算符（对两个操作数作处理），其功能是将右方操作数所含的值赋给左方的操作数。</div>
+<div class="para" label-module="para">例如：</div>
+<pre class="brush: java">int&nbsp;a&nbsp;=&nbsp;100;
+</pre><div class="para" label-module="para"><b>算术运算符</b></div>
+<table log-set-param="table_view" data-sort="sortDisabled"><tr><th>运算符</th><th>说明</th></tr><tr><td width="327" valign="middle">+</td><td width="328" valign="middle">加</td></tr><tr><td width="327" valign="middle">-</td><td width="328" valign="middle">减</td></tr><tr><td width="327" valign="middle">*</td><td width="328" valign="middle">乘</td></tr><tr><td width="327" valign="middle">/</td><td width="328" valign="middle">除</td></tr><tr><td width="327" valign="middle">%</td><td width="328" valign="middle">取余数</td></tr></table><div class="para" label-module="para"><b>自增和自减运算符</b></div>
+<div class="para" label-module="para">自增和自减是单目运算符，可以放在操作元之前，也可以放在操作元之后。操作元必须是一个整型或浮点型变量。自增、自减运算符的作用是使变量的值增1或减1。放在操作元前面的自增、自减运算符，会先将变量的值加1或减1，然后再使该变量参与表达式的运算。放在操作元后面的自增、自减运算符，会先使变量参与表达式的运算，然后再将该变量的值加1或减1。</div>
+<div class="para" label-module="para">例如：</div>
+<div class="para" label-module="para">假设a=5</div>
+<pre class="brush: java">b=++a;//先将a的值加1，然后赋值给b，此时a的值为6，b的值为6
+b=a++;//先将a的值赋值给b，再将a的值变为6，此时a的值为6，b的值为5
+</pre><div class="para" label-module="para"><b>比较运算符</b></div>
+<div class="para" label-module="para">比较运算符属于二元运算符，用于程序中的变量之间，变量和自变量之间以及其他类型的信息之间的比较。比较运算符的运算结果是boolean型。当运算符对应的关系成立时，运算的结果为<a target=_blank href="/item/true/9955400" data-lemmaid="9955400">true</a>，否则为<a target=_blank href="/item/false">false</a>。比较运算符共有6个，通常作为判断的依据用于条件语句中。<b><br/>　　</b></div>
+<table log-set-param="table_view" data-sort="sortDisabled"><tr><th>运算符</th><th>说明</th></tr><tr><td width="327" valign="middle">&gt;</td><td width="328" valign="middle">比较左方是否大于右方</td></tr><tr><td width="327" valign="middle">&lt;</td><td width="328" valign="middle">比较左方是否小于右方</td></tr><tr><td width="327" valign="middle">==</td><td width="328" valign="middle">比较左方是否等于右方</td></tr><tr><td width="327" valign="middle">&gt; =</td><td width="328" valign="middle">比较左方是否大于等于右方</td></tr><tr><td width="327" valign="middle">&lt;=</td><td width="328" valign="middle">比较左方是否小于等于右方</td></tr><tr><td width="327" valign="middle">！=</td><td width="328" valign="middle">比较左方是否不等于右方</td></tr></table><div class="para" label-module="para"><b>逻辑运算符</b></div>
+<table log-set-param="table_view" class="table-view log-set-param"><tr><th>运算符</th><th>作用</th></tr><tr><td width="327" valign="top">&amp;&amp;</td><td width="327" valign="top">逻辑与</td></tr><tr><td width="327" valign="top">||</td><td width="327" valign="top">逻辑或</td></tr><tr><td width="327" valign="top">！</td><td width="327" valign="top">逻辑非</td></tr></table><div class="para" label-module="para"><i><br/>　　</i><i>语言基础参考资料来源</i><sup class="sup--normal" data-sup="24">
+[24]</sup><a class="sup-anchor" name="ref_[24]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="5_4" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_5_4" class="lemma-anchor " ></a>
+<a name="程序举例" class="lemma-anchor " ></a>
+<a name="5-4" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>程序举例</h3>
+</div>
+<pre class="brush: java">/*一个简单的Java应用程序，显示内容：Hello&nbsp;World!
+文件名为Hello．java*/
+class&nbsp;Hello{
+&nbsp;&nbsp;//程序开始于main()
+&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String&nbsp;args[]){
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello&nbsp;World!")；
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;}
+
+</pre><div class="para" label-module="para">main方法，正如注释所说，这是程序开始执行的第一行。对于一个Java应用程序来说，main方法是必需的，Java解释器在没有生成任何对象的情况下，以main作为入口来执行程序。每个类中可以定义多个方法，但main方法只能有一个。关键字public表示访问权限，指明所有的类都可以使用这一方法。本例中，main必须被定义为public类型，因为当程序开始执行时它需要被它的类之外的代码调用。关键字static指明该方法是一个类方法。关键字void指明main()方法不返回任何值。main方法圆括号中定义的String args[]是传送给main方法的参数，参数名为args，它是类<a target=_blank href="/item/String/5137266" data-lemmaid="5137266">String</a>的一个对象。方法的参数用“类名参数名”来指定，多个参数间用逗号分隔。该行的最后一个字符是“{”，它表示了main程序体的开始，一个方法中包含的所有代码都将包括在这对花括号中间。另外，main仅是解释器开始工作的地方，一个复杂的程序可能包含几十个类，但这些类仅需要一个main方法。<sup class="sup--normal" data-sup="25">
+[25]</sup><a class="sup-anchor" name="ref_[25]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="6" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_6" class="lemma-anchor " ></a>
+<a name="语言标准" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>语言标准</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="6" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">1997年11月17日，国际标准化组织<i>（ISO）</i>同意采纳Sun公司的专利技术——Java作为ISO标准。JAVA作为一个技术标准供公众无偿使用。根据ISO的批准，Sun公司将可提交JAVA的标准化平台规范。<sup class="sup--normal" data-sup="26">
+[26]</sup><a class="sup-anchor" name="ref_[26]_12654100">&nbsp;</a>
+</div>
+<table log-set-param="table_view" data-sort="sortDisabled"><tr><th>发布时间</th><th>名称</th></tr><tr><td width="298" align="left" valign="top" colspan="1" rowspan="1">2000年11月15日</td><td width="357" align="left" valign="top" colspan="1" rowspan="1">ISO/TS 10303-27:2000</td></tr><tr><td width="298" valign="top" colspan="1" rowspan="1">2006年5月15日</td><td width="357" valign="top">ISO/IEC 19777-2:2006</td></tr><tr><td width="298" valign="top" colspan="1" rowspan="1">2014年7月15日</td><td width="357" valign="top">ISO/IEC TR 13066-6:2014</td></tr><tr><td width="298" valign="top" colspan="1" rowspan="1"><div class="para" label-module="para">2015年8月15日</div>
+</td><td width="357" valign="top"><div class="para" label-module="para">ISO 20210:2015</div>
+</td></tr><tr><td width="298" valign="top" colspan="1" rowspan="1"><div class="para" label-module="para">2016年3月15日</div>
+</td><td width="357" valign="top"><div class="para" label-module="para">ISO/IEC 30106-2:2016</div>
+</td></tr></table><div class="para" label-module="para"><i>语言标准参考资料</i><sup class="sup--normal" data-sup="27-31">
+[27-31]</sup><a class="sup-anchor" name="ref_[27-31]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="7" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_7" class="lemma-anchor " ></a>
+<a name="语言规范" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>语言规范</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="7" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para"><a target=_blank href="/item/JCP">JCP</a><i>（Java Community Process）</i>是一个开放的国际组织，主要由Java开发者以及被授权者组成，职能是发展和更新Java技术规范、参考实现<i>（<a target=_blank href="/item/RI">RI</a>）</i>、技术兼容包<i>（<a target=_blank href="/item/TCK">TCK</a>）</i>。</div>
+<div class="para" label-module="para">JCP维护的规范包括<a target=_blank href="/item/Java%20ME">Java ME</a>、<a target=_blank href="/item/Java%20SE">Java SE</a>、<a target=_blank href="/item/Java%20EE">Java EE</a>、<a target=_blank href="/item/XML">XML</a>、<a target=_blank href="/item/OSS/3505559" data-lemmaid="3505559">OSS</a>、<a target=_blank href="/item/JAIN">JAIN</a>等。组织成员可以提交JSR<i>（Java </i><i>Specification Requests）</i>，通过特定程序以后，进入到下一版本的规范里面。</div>
+<div class="para" label-module="para"><a target=_blank href="/item/JSR">JSR</a>是早期提议和最终发布的Java平台规范的具体描述。通常，一个新的JSR的提出是为了增加或者规范Java平台的功能。某个具体的JSR由专家组共同来制定，工作由组长协调。例如，CLDC1.0<i>（Connected Limited Device Configuration，JSR30）</i>由Sun公司的Antero Taivalsaari担任组长，同时专家组的成员还包括Siemens、Motorola、Nokia、Symbian等。Java ME平台规范是在JSR68中定义的，规范组长是Sun公司的Jon Courtney。</div>
+<div class="para" label-module="para">JSR完成后，相关的规范及JavaAPI会在JCP的官方网站发布。设备制造商可以在自己的产品中实现某个JSR，如MIDP2.0<i>（JSRll8）</i>。但是这些都必须要通过TCK<i>（Technology Compatibility Kit）</i>测试以确保技术兼容性。<sup class="sup--normal" data-sup="32">
+[32]</sup><a class="sup-anchor" name="ref_[32]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">按照技术类别可以分成以下几类：</div>
+<div class="para" label-module="para">1、J2EE平台规范<sup class="sup--normal" data-sup="33">
+[33]</sup><a class="sup-anchor" name="ref_[33]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">2、J2SE平台规范<sup class="sup--normal" data-sup="34">
+[34]</sup><a class="sup-anchor" name="ref_[34]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">3、J2ME平台规范<sup class="sup--normal" data-sup="35">
+[35]</sup><a class="sup-anchor" name="ref_[35]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">4、运营支持系统规范<i>（OSS）<sup class="sup--normal" data-sup="36">
+[36]</sup><a class="sup-anchor" name="ref_[36]_12654100">&nbsp;</a>
+</i></div>
+<div class="para" label-module="para">5、综合网络的Java 应用<i>（JAIN）</i><sup class="sup--normal" data-sup="37">
+[37]</sup><a class="sup-anchor" name="ref_[37]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">6、XML 操作规范<sup class="sup--normal" data-sup="38">
+[38]</sup><a class="sup-anchor" name="ref_[38]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="8" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_8" class="lemma-anchor " ></a>
+<a name="技术应用" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>技术应用</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="8" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="para" label-module="para">1、Android应用</div>
+<div class="para" label-module="para">许多的 <a target=_blank href="/item/Android/60243" data-lemmaid="60243">Android</a>应用都是Java程序员开发者开发。虽然 Android运用了不同的<a target=_blank href="/item/JVM">JVM</a>以及不同的<a target=_blank href="/item/%E5%B0%81%E8%A3%85/2796965" data-lemmaid="2796965">封装</a>方式，但是代码还是用Java语言所编写。相当一部分的手机中都支持JAVA游戏，这就使很多非编程人员都认识了JAVA。</div>
+<div class="para" label-module="para">2、在金融业应用的服务器程序</div>
+<div class="para" label-module="para">Java在<a target=_blank href="/item/%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8A%A1%E4%B8%9A">金融服务业</a>的应用非常广泛，很多第三方交易系统、银行、金融机构都选择用Java开发，因为相对而言，Java较安全<sup class="sup--normal" data-sup="39">
+[39]</sup><a class="sup-anchor" name="ref_[39]_12654100">&nbsp;</a>
+。大型跨国投资银行用Java来编写前台和后台的电子交易系统，结算和确认系统，数据处理项目以及其他项目。大多数情况下，Java被用在服务器端开发，但多数没有任何前端，它们通常是从一个服务器<i>（上一级）</i>接收数据，处理后发向另一个处理系统<i>（下一级处理）</i>。</div>
+<div class="para" label-module="para">3、网站</div>
+<div class="para" label-module="para">Java 在电子商务领域以及网站开发领域占据了一定的席位。开发人员可以运用许多不同的框架来创建web项目，SpringMVC，Struts2.0以及<a target=_blank href="/item/frameworks">frameworks</a>。即使是简单的 servlet，jsp和以struts为基础的网站在政府项目中也经常被用到。例如医疗救护、保险、教育、国防以及其他的不同部门网站都是以Java为基础来开发的。</div>
+<div class="para" label-module="para">4、嵌入式领域</div>
+<div class="para" label-module="para">Java在嵌入式领域发展空间很大。在这个平台上，只需130<a target=_blank href="/item/KB/331" data-lemmaid="331">KB</a>就能够使用Java技术<i>（在智能卡或者传感器上）</i>。</div>
+<div class="para" label-module="para">5、大数据技术</div>
+<div class="para" label-module="para">Hadoop以及其他大数据处理技术很多都是用Java，例如Apache的基于Java的<a target=_blank href="/item/HBase">HBase</a>和Accumulo以及 ElasticSearchas。</div>
+<div class="para" label-module="para">6、高频交易的空间</div>
+<div class="para" label-module="para">Java平台提高了这个平台的特性和即使编译，他同时也能够像 C++ 一样传递数据。正是由于这个原因，Java成为的程序员编写交易平台的语言，因为虽然性能不比C++，但开发人员可以避开安全性，可移植性和可维护性等问题。</div>
+<div class="para" label-module="para">7、科学应用</div>
+<div class="para" label-module="para">Java在科学应用中是很好选择，包括自然语言处理。最主要的原因是因为Java比C++或者其他语言相对其安全性、便携性、可维护性以及其他高级语言的并发性更好。<sup class="sup--normal" data-sup="40">
+[40]</sup><a class="sup-anchor" name="ref_[40]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="9" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_9" class="lemma-anchor " ></a>
+<a name="学习指南" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>学习指南</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="9" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="anchor-list">
+<a name="9_1" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_9_1" class="lemma-anchor " ></a>
+<a name="考试" class="lemma-anchor " ></a>
+<a name="9-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>考试</h3>
+</div>
+<div class="para" label-module="para">Sun公司的Java认证共有以下四种：Java程序员<i>（SCJP）</i>、Java开发员<i>（SCJP）</i>、Java Web组件的开发（SCWD）和Java2企业级设计师企业级技术（SCJA）。中国开展较为普遍的Java认证考试为前两种，其中，Java程序员的认证考试以Sun公司指定的JavaSL-275为教材，考试号为310-025。Java开发员的认证考试以Sun指定的JavaSL-285为教材，机考部分的考试号为310-027。<sup class="sup--normal" data-sup="41">
+[41]</sup><a class="sup-anchor" name="ref_[41]_12654100">&nbsp;</a>
+<a name="ref_41"></a></div>
+<div class="para" label-module="para">Sun Certified Java Programmer<i>（SCJP）</i></div>
+<div class="para" label-module="para">Java 程序员认证，测试Java 程序设计的要领和能力，内容侧重于Java 的语法及JDK<i>（Java Development Kit）</i>。</div>
+<div class="para" label-module="para">Sun Certified Java Developer<i>（SCJD）</i></div>
+<div class="para" label-module="para">Java 开发员认证，进一步测试用Java 开发应用程序的能力。必须先完成一个程序设计的项目后，再回答与此项目相关的几个问题。</div>
+<div class="para" label-module="para">Sun Certified Web Component Developer for Java 2Platform Enterprise Edition<i>（SCWD）</i></div>
+<div class="para" label-module="para">Web 组件开发员认证，测试技术人员对Java Servlets 和JSP（Java Server Page）的程序开发技巧。</div>
+<div class="para" label-module="para">Sun Certified Enterprise Architect for J2EE Technology<i>（SCAJ）</i></div>
+<div class="para" label-module="para">Java2 企业级设计师认证是Java 最高级的认证，测试对J2EE 架构及其他系统整合的相关技术经验及能力。<sup class="sup--normal" data-sup="42">
+[42]</sup><a class="sup-anchor" name="ref_[42]_12654100">&nbsp;</a>
+</div>
+<div class="para" label-module="para">Sun公司定制的Java程序员课程的标准课件的培训期为5天<i>（30个学时）</i>。培训期间，讲师使用Sun公司指定教材，全面系统地讲述课程的内容，并根据各知识点所需要掌握的深度，有层次、有重点、有目的地指导学员的学习。同时，对各种题型的分析和讲解更能帮助学员直观、准确地了解java认证考试。<sup class="sup--normal" data-sup="41">
+[41]</sup><a class="sup-anchor" name="ref_[41]_12654100">&nbsp;</a>
+<a name="ref_41"></a></div><div class="anchor-list">
+<a name="9_2" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_9_2" class="lemma-anchor " ></a>
+<a name="教材" class="lemma-anchor " ></a>
+<a name="9-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>教材</h3>
+</div>
+<div class="para" label-module="para">《<a target=_blank href="/item/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89">Java从入门到精通（第3版）</a>》：从初学者角度出发，通过通俗易懂的语言、丰富多彩的实例，详细介绍了使用Java语言进行程序开发需要掌握的知识<sup class="sup--normal" data-sup="3">
+[3]</sup><a class="sup-anchor" name="ref_[3]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">《Java编程语言（第3版）》：该书向熟悉基本编程概念的人讲述Java编程语言。该书解释了Java语言，但不是晦涩的正式介绍，也没有覆盖Java语言的所有方面<sup class="sup--normal" data-sup="43">
+[43]</sup><a class="sup-anchor" name="ref_[43]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">《<a target=_blank href="/item/%E7%96%AF%E7%8B%82Java%E8%AE%B2%E4%B9%89">疯狂Java讲义</a>》：该书深入介绍了Java编程的相关方面，全书内容覆盖了Java的基本语法结构、Java的面向对象特征、Java集合框架体系、Java泛型、异常处理、Java GUI编程、JDBC数据库编程、Java注释、Java的IO流体系、Java多线程编程、Java网络通信编程和Java反射机制<sup class="sup--normal" data-sup="44">
+[44]</sup><a class="sup-anchor" name="ref_[44]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">《<a target=_blank href="/item/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%89">Java编程思想（第4版）</a>》：以JDK5.0为基础，在第3版的基础上，添加了新的语言特性，并且对第3版的结构进行了调整，使得所有章节的安排更加遵照循序渐进的特点，同时每一章的内容在分量上也都更加均衡，这使读者能够更加容易地阅读本书并充分了解每章所讲述的内容<sup class="sup--normal" data-sup="45">
+[45]</sup><a class="sup-anchor" name="ref_[45]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">《Java经典实例（第2版）》：本书囊括了许多有用的信息。然而，由于所涉及的主题广泛，不可能对所有主题都进行详尽地阐述。因此，本书还提供了相关的web站点与参考书籍。这也是为了本书的目标读者：想学习更多Java的人<sup class="sup--normal" data-sup="46">
+[46]</sup><a class="sup-anchor" name="ref_[46]_12654100">&nbsp;</a>
+。</div>
+<div class="para" label-module="para">《Java语言程序设计》：该书是清华大学出版社《普通高校本科计算机专业特色教材精选》丛书之一，也是普通高等教育“十一五” 国家级规划教材。该教材以培养应用型计算机人才为目标，立足课程改革和教材创新，在总结作者多年来从事Java语言教学工作经验的基础上形成了教材的核心内容。本教材可为普通高等院校计算机专业学生学习使用，也适用于自学<sup class="sup--normal" data-sup="47">
+[47]</sup><a class="sup-anchor" name="ref_[47]_12654100">&nbsp;</a>
+。</div><div class="anchor-list">
+<a name="10" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_10" class="lemma-anchor " ></a>
+<a name="语言评价" class="lemma-anchor " ></a>
+</div><div class="para-title level-2" label-module="para-title">
+<h2 class="title-text"><span class="title-prefix">Java</span>语言评价</h2>
+<a class="edit-icon j-edit-link" data-edit-dl="10" href="javascript:;"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-lemma"></em>编辑</a>
+</div>
+<div class="anchor-list">
+<a name="10_1" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_10_1" class="lemma-anchor " ></a>
+<a name="发展前景" class="lemma-anchor " ></a>
+<a name="10-1" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>发展前景</h3>
+</div>
+<div class="para" label-module="para"><div class="lemma-picture text-pic layout-right" style="width:157px; float: right;">
+<a class="image-link" nslog-type="9317" 
+			href="/pic/Java/85979/0/b7fd5266d0160924f8fe13afd30735fae7cd34ae?fr=lemma&ct=single" target="_blank"
+		title="Java" style="width:157px;height:220px;">
+<img  class="lazy-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF9fX1AAAA0VQI3QAAAAxJREFUeNpiYAAIMAAAAgABT21Z4QAAAABJRU5ErkJggg==" data-src="http://d.hiphotos.baidu.com/baike/s%3D220/sign=4a3e38bab63533faf1b6942c98d2fdca/b7fd5266d0160924f8fe13afd30735fae7cd34ae.jpg"  alt="Java" style="width:157px;height:220px;"/>
+</a>
+<span class="description">
+Java
+</span>
+</div>计算机的诞生及广泛应用推动了IT领域的发展，但21世纪的计算机早已不是访问<a target=_blank href="/item/INTERNET/272794" data-lemmaid="272794">INTERNET</a>的唯一的途径。各类更具信息化的电子产品逐渐进入IT领域，推动了PC时代的大发展。由于各种消费信息的急剧增加，传统的客户机的各方面条件均不如PC，PC的发展对服务器的应用管理体统也提出了更高标准。Java语言完全满足了PC的条件，在减少内存，直接在各类电子产品中运行，在网络中可被任何设备所识别，充分利用网络资源等方面有所突破创新，为PC时代的发展创造了有力条件。</div>
+<div class="para" label-module="para">随着IT产业的发展，许多企业中的计算机应用程序也在随之转型，企业中所应用的计算机模式逐渐向客户端较小、<a target=_blank href="/item/%E6%9C%8D%E5%8A%A1%E5%99%A8">服务器</a>随之增大、数据库的容量也在相应增加的方向转变。此外，加上Java语言独有的特点，根据其在各项服务器中应用程序的开发所占有的优势，企业版的J2SE为企业环境中计算机模式的应用提供了良好的平台。</div>
+<div class="para" label-module="para">Java语言为与数据库联系紧密设计了Java servlet和SQL-J技术，以及<a target=_blank href="/item/JSP/141543" data-lemmaid="141543">JSP</a>技术。随着JSP技术的发展，使JAVA语言的网络应用更为实际化、更高效快捷，成为IT产业常用的技术。JSP以Java语言作为其服务器端的使用语言，结合了<a target=_blank href="/item/JAVA%20SCRIPT">JAVA SCRIPT</a>等多种其他客户端语言，使网络浏览器更为方便的展现。<sup class="sup--normal" data-sup="48">
+[48]</sup><a class="sup-anchor" name="ref_[48]_12654100">&nbsp;</a>
+<a name="ref_48"></a></div>
+<div class="para" label-module="para">在远程网络教学方面，由于JAVA改变了传统的基于Microsoft Front Page或<a target=_blank href="/item/HTML">HTML</a>语言制作的<a target=_blank href="/item/Web/150564" data-lemmaid="150564">Web</a>页面形态，使网络远程教学更加朝着动态、便捷化、安全化的方向发展，丰富了网络远程教学的手段和覆盖面。<sup class="sup--normal" data-sup="49">
+[49]</sup><a class="sup-anchor" name="ref_[49]_12654100">&nbsp;</a>
+</div><div class="anchor-list">
+<a name="10_2" class="lemma-anchor para-title" ></a>
+<a name="sub12654100_10_2" class="lemma-anchor " ></a>
+<a name="贡献及影响力" class="lemma-anchor " ></a>
+<a name="10-2" class="lemma-anchor " ></a>
+</div><div class="para-title level-3" label-module="para-title">
+<h3 class="title-text"><span class="title-prefix">Java</span>贡献及影响力</h3>
+</div>
+<div class="para" label-module="para">Java 语言是一门随时代快速发展的计算机语言程序，其深刻展示了程序编写的精髓，加上其简明严谨的结构及简洁的语法编写为其将来的发展及维护提供了保障。由于提供了网络应用的支持和多媒体的存取，会推动Internet和企业网络的Web的应用<sup class="sup--normal" data-sup="50">
+[50]</sup><a class="sup-anchor" name="ref_[50]_12654100">&nbsp;</a>
+。另外，为了保持Java的增长和推进Java社区的参与，Sun公司在Java One开发者大会上宣布开放Java核心源代码，以鼓励更多的人参与到Java社团活动中。来自Java社团和IBM等全球技术合作伙伴两方面的支持，Java技术在创新和社会进步上继续发挥强有力的重要作用<sup class="sup--normal" data-sup="51">
+[51]</sup><a class="sup-anchor" name="ref_[51]_12654100">&nbsp;</a>
+，并且随着其程序编写难度的降低使得更多专业人员将精力放置于Java语言的编写与框架结构的设计中<sup class="sup--normal" data-sup="48">
+[48]</sup><a class="sup-anchor" name="ref_[48]_12654100">&nbsp;</a>
+<a name="ref_48"></a>。</div>
+<div class="anchor-list">
+<a name="a" class="lemma-anchor a" ></a>
+</div><div class="album-list">
+<div class="header">
+<span class="title">词条图册</span>
+<a class="more-link" href="/pic/Java/85979?fr=lemma" target="_blank" nslog-type="10000204">更多图册<em></em></a>
+</div>
+<div class="scroller">
+<div class="list">
+</div>
+</div>
+<div class="footer">
+</div>
+</div>
+<div class="tashuo-bottom" id="tashuo_bottom">
+<div class="tashuo-bottom-title-essence">
+<img src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/tashuo/img/ta-logo-blue_6da9967.png" alt="">
+<span>解读词条背后的知识</span>
+</div>
+<div class="tashuo-single J-item" data-tashuoId="c9fdac1dc2c1b8d1280ac987">
+<div class="tashuo-author">
+<a href="/tashuo/authorcenter?authorId=e0a309bf53f2097890c7b826" target="_blank">
+<div class="ta-author-area"><span><img src="https://imgsa.baidu.com/baike/pic/item/a9d3fd1f4134970a835fd3f699cad1c8a7865d3f.jpg" /></span></div>
+<div class="ta-author-slogan-area">
+<strong>张书乐</strong>
+<span>TMT名博，人民网、人民邮电报专栏作者</span>
+</div>
+<i></i></a>
+</div>
+<div class="tashuo-content">
+<a target="_blank" href="/tashuo/browse/content?id=c9fdac1dc2c1b8d1280ac987&lemmaId=&fromLemmaModule=list" class="cover"><img class="cover-img" src="https://imgsa.baidu.com/baike/pic/item/0824ab18972bd407295a5af772899e510fb3091e.jpg" data-width="800" data-height="600"></a>
+<div class="tashuo-content-essence" >
+<p class="title"><a href="/tashuo/browse/content?id=c9fdac1dc2c1b8d1280ac987&lemmaId=&fromLemmaModule=pcBottom" target="_blank">Java之父“高司令”</a>
+</p>
+<p class="abstract">
+<a href="/tashuo/browse/content?id=c9fdac1dc2c1b8d1280ac987&lemmaId=&fromLemmaModule=pcBottom" target="_blank">
+他是比尔盖茨的噩梦，他用他的大胡子让盖茨的微笑变得十分勉强，他是技术的先驱，他技术成果覆盖了100亿台设备，除了苹果，没有什么手机不用向他致敬；他就是高斯林，Java的缔造者说起高司令的大名，很多人肯定会联想到地道战经典对白“高实在是高”，不好意思，那是胡司令，这个高司令是...</a>
+</p>
+<div class="tashuo-operator">
+<span class="tashuo-publish-date">2016-12-16</span><span class="tashuo-like J-like " data-isvote="0"><i></i><strong class="J-number">780</strong></span>
+<span class="tashuo-view"><i>阅读</i><strong>25345</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="rs-container-foot">
+<a name="rs-1"></a>
+<a name="rs_12654100_30475" class="anchor-2"></a>
+<div id="rs-container-12654100-30475" class="rslazy rs-container" lazy-init="lemmars.tableAction(baidu.g('rs-12654100-30475'))"></div>
+<a name="rs_12654100_32189" class="anchor-2"></a>
+<div id="rs-container-12654100-32189" class="rslazy rs-container" lazy-init="lemmars.tableAction(baidu.g('rs-12654100-32189'))"></div>
+</div><script type="text/javascript">
+        window.rsInsertData = window['rsInsertData'] || [];
+        var rsdataList = {"foot":[{"fentryTableId":30475,"fentryTableName":"\u592a\u9633\u5fae\u7cfb\u7edf(2010\u5e74\u88ab\u7532\u9aa8\u6587\u516c\u53f8\u6536\u8d2d)","fentryTableType":1,"entryId":2563680,"templateId":0,"entryTitle":"\u592a\u9633\u5fae\u7cfb\u7edf(2010\u5e74\u88ab\u7532\u9aa8\u6587\u516c\u53f8\u6536\u8d2d)","isManual":0,"isExpand":1},{"fentryTableId":32189,"fentryTableName":"Java(\u7532\u9aa8\u6587\u516c\u53f8)","fentryTableType":1,"entryId":2587097,"templateId":0,"entryTitle":"Java(\u7532\u9aa8\u6587\u516c\u53f8)","isManual":1,"isExpand":1}],"top":[]};
+
+        if (rsdataList.top || rsdataList.foot) {
+            rsInsertData.push([12654100, rsdataList]);
+        }
+    </script>
+<dl class="lemma-reference collapse nslog-area log-set-param" data-nslog-type="2" log-set-param="ext_reference">
+<dt class="reference-title">参考资料<em class="toggle"></em></dt>
+<dd class="reference-list-wrap">
+<ul class="reference-list">
+<li class="reference-item reference-item--type2 " id="reference-[1]-12654100-wrap">
+<span class="index">1.</span>
+<a class="gotop anchor"  name="refIndex_1_12654100" id="refIndex_1_12654100" title="向上跳转" href="#ref_[1]_12654100">&nbsp;&nbsp;</a>
+<span>李刚</span><span class="text">．疯狂Java讲义（第2版）</span><span>：电子工业出版社</span><span>，2014</span><span>：2</span></li><li class="reference-item reference-item--type2 " id="reference-[2]-12654100-wrap">
+<span class="index">2.</span>
+<a class="gotop anchor"  name="refIndex_2_12654100" id="refIndex_2_12654100" title="向上跳转" href="#ref_[2]_12654100">&nbsp;&nbsp;</a>
+<span>赵景晖</span><span class="text">．Java 程序设计</span><span>：北京机械工业出版社</span><span>，2005</span><span>：1-2</span></li><li class="reference-item reference-item--type2 " id="reference-[3]-12654100-wrap">
+<span class="index">3.</span>
+<a class="gotop anchor"  name="refIndex_3_12654100" id="refIndex_3_12654100" title="向上跳转" href="#ref_[3]_12654100">&nbsp;&nbsp;</a>
+<span>明日科技</span><span class="text">．Java从入门到精通（第3版）</span><span>：清华大学出版社</span><span>，2014</span></li><li class="reference-item reference-item--type3 " id="reference-[4]-12654100-wrap">
+<span class="index">4.</span>
+<a class="gotop anchor"  name="refIndex_4_12654100" id="refIndex_4_12654100" title="向上跳转" href="#ref_[4]_12654100">&nbsp;&nbsp;</a>
+<span class="text">李晋.Java的昨天，今天和明天[J].信息与电脑,2011(1).</span>
+</li><li class="reference-item reference-item--type2 " id="reference-[5]-12654100-wrap">
+<span class="index">5.</span>
+<a class="gotop anchor"  name="refIndex_5_12654100" id="refIndex_5_12654100" title="向上跳转" href="#ref_[5]_12654100">&nbsp;&nbsp;</a>
+<span>任哲</span><span class="text">．JAVA技术应用基础</span><span>：机械工业出版社</span><span>，2009</span><span>：4-6</span></li><li class="reference-item reference-item--type2 " id="reference-[6]-12654100-wrap">
+<span class="index">6.</span>
+<a class="gotop anchor"  name="refIndex_6_12654100" id="refIndex_6_12654100" title="向上跳转" href="#ref_[6]_12654100">&nbsp;&nbsp;</a>
+<span>董云铮，陈千，梅惠平</span><span class="text">．Java技术应用</span><span>：清华大学出版社</span><span>，2007</span><span>：2</span></li><li class="reference-item reference-item--type2 " id="reference-[7]-12654100-wrap">
+<span class="index">7.</span>
+<a class="gotop anchor"  name="refIndex_7_12654100" id="refIndex_7_12654100" title="向上跳转" href="#ref_[7]_12654100">&nbsp;&nbsp;</a>
+<span>周志明</span><span class="text">．深入理解Java虚拟机</span><span>：机械工业出版社</span><span>，2011</span><span>：6</span></li><li class="reference-item reference-item--type2 " id="reference-[8]-12654100-wrap">
+<span class="index">8.</span>
+<a class="gotop anchor"  name="refIndex_8_12654100" id="refIndex_8_12654100" title="向上跳转" href="#ref_[8]_12654100">&nbsp;&nbsp;</a>
+<span>李明，陈京民，陶飞飞</span><span class="text">．Java程序设计与应用 </span><span>：清华大学出版社</span><span>，2010</span><span>：3-4</span></li><li class="reference-item reference-item--type3 " id="reference-[9]-12654100-wrap">
+<span class="index">9.</span>
+<a class="gotop anchor"  name="refIndex_9_12654100" id="refIndex_9_12654100" title="向上跳转" href="#ref_[9]_12654100">&nbsp;&nbsp;</a>
+<span class="text">郑悦.2006：开源精彩一年[J].中国计算机用户,2006(50).</span>
+</li><li class="reference-item reference-item--type1 " id="reference-[10]-12654100-wrap">
+<span class="index">10.</span>
+<a class="gotop anchor"  name="refIndex_10_12654100" id="refIndex_10_12654100" title="向上跳转" href="#ref_[10]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/7b49cidE_4L6nqyzX05n_xlaY_5mO22QYm8qMz4g-MOtffw7da5k5IL3pkQXyFKpMq_p_dY778PIeBk9yDWOOQbn7ZhNaUEillpviUrM8hVl5YAm" target="_blank" class="text">详讯：甲骨文将以74亿美元收购Sun<span class="linkout">&nbsp;</span></a>
+<span class="site">．新浪</span><span>&#91;引用日期2016-05-31&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[11]-12654100-wrap">
+<span class="index">11.</span>
+<a class="gotop anchor"  name="refIndex_11_12654100" id="refIndex_11_12654100" title="向上跳转" href="#ref_[11]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/55252tc5fOL7R6U4sI7esmZb-Ar40p3vJNyRo4FQUVNy7phfx40E1I975mFfnV26CErKjm9QQdrzfRPqiFkwY-XGUayP78X_a7pgO_4yaZkggzpUAms6r2U" target="_blank" class="text">Oracle发布Java 8正式版及JDK 8<span class="linkout">&nbsp;</span></a>
+<span class="site">．CSDN</span><span>&#91;引用日期2016-05-30&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[12]-12654100-wrap">
+<span class="index">12.</span>
+<a class="gotop anchor"  name="refIndex_12_12654100" id="refIndex_12_12654100" title="向上跳转" href="#ref_[12]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/77b3qlE6WOvbe9x5rL_MKPwHBeJcS4JvgVUUUNcjRR5vaGcJui06MbhEx_4jqilvPBqC6ibVKmzOA6UyfusqUekw7w7ZzuagVd9YQQ" target="_blank" class="text">Java Platform Standard Edition 8 Documentation<span class="linkout">&nbsp;</span></a>
+<span class="site">．oracle</span><span>&#91;引用日期2016-05-31&#93;</span></li><li class="reference-item reference-item--type2 more" id="reference-[13]-12654100-wrap">
+<span class="index">13.</span>
+<a class="gotop anchor"  name="refIndex_13_12654100" id="refIndex_13_12654100" title="向上跳转" href="#ref_[13]_12654100">&nbsp;&nbsp;</a>
+<span>王薇，杜威</span><span class="text">．Java程序设计与实践</span><span>：华中科技大学出版社</span><span>，2010</span><span>：9</span></li><li class="reference-item reference-item--type2 more" id="reference-[14]-12654100-wrap">
+<span class="index">14.</span>
+<a class="gotop anchor"  name="refIndex_14_12654100" id="refIndex_14_12654100" title="向上跳转" href="#ref_[14]_12654100">&nbsp;&nbsp;</a>
+<span>周志明</span><span class="text">．深入理解Java虚拟机</span><span>：机械工业出版社</span><span>，2011</span><span>：4</span></li><li class="reference-item reference-item--type2 more" id="reference-[15]-12654100-wrap">
+<span class="index">15.</span>
+<a class="gotop anchor"  name="refIndex_15_12654100" id="refIndex_15_12654100" title="向上跳转" href="#ref_[15]_12654100">&nbsp;&nbsp;</a>
+<span>王薇，杜威</span><span class="text">．Java程序设计与实践</span><span>：华中科技大学出版社</span><span>，2010</span><span>：10</span></li><li class="reference-item reference-item--type1 more" id="reference-[16]-12654100-wrap">
+<span class="index">16.</span>
+<a class="gotop anchor"  name="refIndex_16_12654100" id="refIndex_16_12654100" title="向上跳转" href="#ref_[16]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/f4abtFYLRYlNVBQNrAqFGmIt71bJRdPLOJ6fGRzbEZuLc2das81f5fPuJdk-mUP5Bw" target="_blank" class="text">Eclipse<span class="linkout">&nbsp;</span></a>
+<span class="site">．Eclipse官网</span><span>&#91;引用日期2016-05-31&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[17]-12654100-wrap">
+<span class="index">17.</span>
+<a class="gotop anchor"  name="refIndex_17_12654100" id="refIndex_17_12654100" title="向上跳转" href="#ref_[17]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/63f2cNwKESDp8HGY8EArO7H5pa-lb9XRHeUGF2BDy6jrjD3fm9__Y7x-h7msNSrTIY7LAPM4H24yFj0" target="_blank" class="text">idea<span class="linkout">&nbsp;</span></a>
+<span class="site">．idea</span><span>&#91;引用日期2016-05-27&#93;</span></li><li class="reference-item reference-item--type2 more" id="reference-[18]-12654100-wrap">
+<span class="index">18.</span>
+<a class="gotop anchor"  name="refIndex_18_12654100" id="refIndex_18_12654100" title="向上跳转" href="#ref_[18]_12654100">&nbsp;&nbsp;</a>
+<span>徐林林</span><span class="text">．零点起飞学Java Web开发</span><span>：清华大学出版社</span><span>，2013</span><span>：19</span></li><li class="reference-item reference-item--type1 more" id="reference-[19]-12654100-wrap">
+<span class="index">19.</span>
+<a class="gotop anchor"  name="refIndex_19_12654100" id="refIndex_19_12654100" title="向上跳转" href="#ref_[19]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/704dXUO0rxkJf-Zzoqz2d_1V04c-cEmbiwV38dYtBNiVlJzSOlCagI2Ve9EgEmHO9LYOWEMHIOonzidSMlBwVFUlA-U7nbw0PZ0o" target="_blank" class="text">那些年，Java程序员用过的开发工具<span class="linkout">&nbsp;</span></a>
+<span class="site">．CSDN</span><span>&#91;引用日期2016-05-30&#93;</span></li><li class="reference-item reference-item--type3 more" id="reference-[20]-12654100-wrap">
+<span class="index">20.</span>
+<a class="gotop anchor"  name="refIndex_20_12654100" id="refIndex_20_12654100" title="向上跳转" href="#ref_[20]_12654100">&nbsp;&nbsp;</a>
+<span class="text">程虎.Java语言的特点[J].现代科学仪器,1997(2).</span>
+</li><li class="reference-item reference-item--type2 more" id="reference-[21]-12654100-wrap">
+<span class="index">21.</span>
+<a class="gotop anchor"  name="refIndex_21_12654100" id="refIndex_21_12654100" title="向上跳转" href="#ref_[21]_12654100">&nbsp;&nbsp;</a>
+<span>毛玉萃，邱少明，杨文艳</span><span class="text">．软件项目实践案例教程</span><span>：清华大学出版社</span><span>，2014</span><span>：42</span></li><li class="reference-item reference-item--type2 more" id="reference-[22]-12654100-wrap">
+<span class="index">22.</span>
+<a class="gotop anchor"  name="refIndex_22_12654100" id="refIndex_22_12654100" title="向上跳转" href="#ref_[22]_12654100">&nbsp;&nbsp;</a>
+<span>王薇，杜威</span><span class="text">．Java程序设计与实践</span><span>：华中科技大学出版社</span><span>，2010</span><span>：8</span></li><li class="reference-item reference-item--type2 more" id="reference-[23]-12654100-wrap">
+<span class="index">23.</span>
+<a class="gotop anchor"  name="refIndex_23_12654100" id="refIndex_23_12654100" title="向上跳转" href="#ref_[23]_12654100">&nbsp;&nbsp;</a>
+<span>Cay S. Horstmann</span><span class="text">．Java核心技术（卷I）</span><span>：机械工业出版社</span><span>，2008</span></li><li class="reference-item reference-item--type2 more" id="reference-[24]-12654100-wrap">
+<span class="index">24.</span>
+<a class="gotop anchor"  name="refIndex_24_12654100" id="refIndex_24_12654100" title="向上跳转" href="#ref_[24]_12654100">&nbsp;&nbsp;</a>
+<span>明日科技</span><span class="text">．Java从入门到精通（第3版）</span><span>．北京清华大学学研大厦A座</span><span>：清华大学出版社</span><span>，2014</span><span>：39-55</span></li><li class="reference-item reference-item--type2 more" id="reference-[25]-12654100-wrap">
+<span class="index">25.</span>
+<a class="gotop anchor"  name="refIndex_25_12654100" id="refIndex_25_12654100" title="向上跳转" href="#ref_[25]_12654100">&nbsp;&nbsp;</a>
+<span>董云铮，陈千，梅惠平</span><span class="text">．Java技术应用</span><span>：北京交通大学出版社</span><span>，2007</span><span>：5-9</span></li><li class="reference-item reference-item--type2 more" id="reference-[26]-12654100-wrap">
+<span class="index">26.</span>
+<a class="gotop anchor"  name="refIndex_26_12654100" id="refIndex_26_12654100" title="向上跳转" href="#ref_[26]_12654100">&nbsp;&nbsp;</a>
+<span>马尔平，天舒</span><span class="text">．计算机英语速查手册</span><span>：中国石化出版社</span><span>，2001</span><span>：508</span></li><li class="reference-item reference-item--type1 more" id="reference-[27]-12654100-wrap">
+<span class="index">27.</span>
+<a class="gotop anchor"  name="refIndex_27_12654100" id="refIndex_27_12654100" title="向上跳转" href="#ref_[27]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/0b2bufw1ogmY0zb5f5hZ10n5RQM-82h8vKyp48V4JTKDDTLAKBG5P2Mr7WxXrQGonzBcYGuDN9z_FAUhlwDqnM2TcOHJrmPhCTeq40a26PhiVzQdamyScnY9ZJ589b-iWYYcH8NVuuC72Mk39dti" target="_blank" class="text">ISO 20210:2015<span class="linkout">&nbsp;</span></a>
+<span class="site">．ISO</span><span>&#91;引用日期2016-06-03&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[28]-12654100-wrap">
+<span class="index">28.</span>
+<a class="gotop anchor"  name="refIndex_28_12654100" id="refIndex_28_12654100" title="向上跳转" href="#ref_[28]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/3908SJ2jYfGFtzR8SmEbz6zZtLmziQBCrRaYtrvicQPd3ZUG6bfjB5uRJfjcJlz0Hmei6exuEb8tUt_mc50JO4em1NlJJFM0yVlHBs_iJF1htDZMB2YOmYzju02DnS6snOp7ow0EYhfUC7Jpch3o" target="_blank" class="text">ISO/IEC 19777-2:2006<span class="linkout">&nbsp;</span></a>
+<span class="site">．ISO</span><span>&#91;引用日期2016-06-03&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[29]-12654100-wrap">
+<span class="index">29.</span>
+<a class="gotop anchor"  name="refIndex_29_12654100" id="refIndex_29_12654100" title="向上跳转" href="#ref_[29]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/5836uZOPDknSXMFscoPQwL2gTJWwtaCgD_twu3uZynQIWCp4Gq6Lvcu5aeGxp4XNKONNiVb_qPEyV3tHvo7fR5azAPP63_J7VsJWR5D63GBiSURFwTpVugMd_6K1j3crbmM-vXJ2nacVaCuE_HXN" target="_blank" class="text">ISO/IEC TR 13066-6:2014<span class="linkout">&nbsp;</span></a>
+<span class="site">．ISO</span><span>&#91;引用日期2016-06-03&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[30]-12654100-wrap">
+<span class="index">30.</span>
+<a class="gotop anchor"  name="refIndex_30_12654100" id="refIndex_30_12654100" title="向上跳转" href="#ref_[30]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/b1f9qVKMapmhSHy17MS3mIMsAM30282CSqc-wPHsLH9VCbA_N3TvE5mkzpDwkI9MhT57fga63mJF1ARytfldFVWKtLB811iEb7Dt-G5iCLA4-KjEU7EnzQRzcOVoAyFe0op-0e2q4LuA0Rg5Uo75" target="_blank" class="text">ISO/IEC 30106-2:2016<span class="linkout">&nbsp;</span></a>
+<span class="site">．ISO</span><span>&#91;引用日期2016-06-03&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[31]-12654100-wrap">
+<span class="index">31.</span>
+<a class="gotop anchor"  name="refIndex_31_12654100" id="refIndex_31_12654100" title="向上跳转" href="#ref_[31]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/a35bWB3x2b1axgwxeVovFoeUD90SlgDJtgCw4GFZl5kuC30bWUuXkK176JNY7ht-3HlIa4kItgJRBCablW8R4DJIIyCK14tzfkBSChK6wFPqVUV7Y7Vv3ZwMH1zdZg3x2GN9pQzBYQNZuiqKU4CM" target="_blank" class="text">ISO/TS 10303-27:2000<span class="linkout">&nbsp;</span></a>
+<span class="site">．ISO</span><span>&#91;引用日期2016-06-03&#93;</span></li><li class="reference-item reference-item--type2 more" id="reference-[32]-12654100-wrap">
+<span class="index">32.</span>
+<a class="gotop anchor"  name="refIndex_32_12654100" id="refIndex_32_12654100" title="向上跳转" href="#ref_[32]_12654100">&nbsp;&nbsp;</a>
+<span>戴丽萍，李磊，许永辉</span><span class="text">．Java ME手机游戏开发从入门到精通</span><span>：国防工业出版社</span><span>，2009</span><span>：6</span></li><li class="reference-item reference-item--type1 more" id="reference-[33]-12654100-wrap">
+<span class="index">33.</span>
+<a class="gotop anchor"  name="refIndex_33_12654100" id="refIndex_33_12654100" title="向上跳转" href="#ref_[33]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/79d7tNqgImUDDMRYoKJqDA7rH7x4jyQw1iwB0DgaXXHNrM_i5lZi1VArJw5YWQ34u0I_76z-vgzXE0fGyiTLgFkDZJGqbEpLCGEKjf3ilRgWsfWkoQ" target="_blank" class="text">Java SE<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[34]-12654100-wrap">
+<span class="index">34.</span>
+<a class="gotop anchor"  name="refIndex_34_12654100" id="refIndex_34_12654100" title="向上跳转" href="#ref_[34]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/094eAqrJTTr3F0FXHLXOUFoOMgTCITWJ9Ye_DAIj_5h2antU0BnrGt-qobbaer_fAManyrE9Wx4LZ329PAWoMlwsRVrhgX6HHqFL3ESjViShF92zYQ" target="_blank" class="text">Java SE<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[35]-12654100-wrap">
+<span class="index">35.</span>
+<a class="gotop anchor"  name="refIndex_35_12654100" id="refIndex_35_12654100" title="向上跳转" href="#ref_[35]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/104flUm2mGfFzeMQ7ElkZIWo4gfLE5P2AyPkIoGe_Kx3SbPKIvEGSMBzlDz5h1_bmdJf5CxwkbQ80w9LHCvqOe88T_OVTJUqatKo3DgHWI9wo6x2" target="_blank" class="text">Java ME<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[36]-12654100-wrap">
+<span class="index">36.</span>
+<a class="gotop anchor"  name="refIndex_36_12654100" id="refIndex_36_12654100" title="向上跳转" href="#ref_[36]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/8c78F0YZn4GVYwLeGrgc8dAT4l8mlPoPc3WXJv4hY5UxGIYUS6j_kXM75UPXVKSylP5tHWp2teGwuXXnc4-3EnBA8mcCgXbRmnKl6LVYuCl1" target="_blank" class="text">OSS<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[37]-12654100-wrap">
+<span class="index">37.</span>
+<a class="gotop anchor"  name="refIndex_37_12654100" id="refIndex_37_12654100" title="向上跳转" href="#ref_[37]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/c199CqqGVn64bkoBN_J0mqiY9O8JaBusgq_cIC0PCje2-JRal_qY8edKRymgSiHJL9QAecwB2GmF5ylDkJHcGHif6REhzxPNsj0IR_y4OOYM" target="_blank" class="text">JAIN<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type1 more" id="reference-[38]-12654100-wrap">
+<span class="index">38.</span>
+<a class="gotop anchor"  name="refIndex_38_12654100" id="refIndex_38_12654100" title="向上跳转" href="#ref_[38]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/bb6bFxzPJFp9z7siT-GHUhS06EoafwPfFm2NmGUxYvpVfRMhArhCLp12UFGp5LGK-Mb8UykUcyEkJ4Rw3OT69W-MBcmZAJnt3q1dpnTJnJFh" target="_blank" class="text">XML<span class="linkout">&nbsp;</span></a>
+<span class="site">．Java Community Process</span><span>&#91;引用日期2016-06-02&#93;</span></li><li class="reference-item reference-item--type2 more" id="reference-[39]-12654100-wrap">
+<span class="index">39.</span>
+<a class="gotop anchor"  name="refIndex_39_12654100" id="refIndex_39_12654100" title="向上跳转" href="#ref_[39]_12654100">&nbsp;&nbsp;</a>
+<span>李钟尉，陈丹丹，张振坤</span><span class="text">．Java编程宝典</span><span>：人民邮电出版社</span><span>，2010</span><span>：5</span></li><li class="reference-item reference-item--type1 more" id="reference-[40]-12654100-wrap">
+<span class="index">40.</span>
+<a class="gotop anchor"  name="refIndex_40_12654100" id="refIndex_40_12654100" title="向上跳转" href="#ref_[40]_12654100">&nbsp;&nbsp;</a>
+<a rel="nofollow" href="/redirect/bde9wQ5qL1ucbwJeMI8ohJ-K-tnomMf6r1lItg2KSmp4BuqUhGsN9kVVUnFkBG_RMfKeNuz0VMQ2viW9Ts50RihlkbCJzDq5KIWl" target="_blank" class="text">现实世界中哪些地方用到了Java<span class="linkout">&nbsp;</span></a>
+<span class="site">．CSDN</span><span>．2014-12-10</span><span>&#91;引用日期2016-05-30&#93;</span></li><li class="reference-item reference-item--type3 more" id="reference-[41]-12654100-wrap">
+<span class="index">41.</span>
+<a class="gotop anchor"  name="refIndex_41_12654100" id="refIndex_41_12654100" title="向上跳转" href="#ref_[41]_12654100">&nbsp;&nbsp;</a>
+<span class="text">柳芳.关于SUN公司的Java认证考试[J].电脑知识与技术,2003(2).</span>
+</li><li class="reference-item reference-item--type3 more" id="reference-[42]-12654100-wrap">
+<span class="index">42.</span>
+<a class="gotop anchor"  name="refIndex_42_12654100" id="refIndex_42_12654100" title="向上跳转" href="#ref_[42]_12654100">&nbsp;&nbsp;</a>
+<span class="text">邵军.Sun认证介绍[J].继续教育,2002(4).</span>
+</li><li class="reference-item reference-item--type2 more" id="reference-[43]-12654100-wrap">
+<span class="index">43.</span>
+<a class="gotop anchor"  name="refIndex_43_12654100" id="refIndex_43_12654100" title="向上跳转" href="#ref_[43]_12654100">&nbsp;&nbsp;</a>
+<span>Ken Arnold</span><span class="text">．Java编程语言（第3版）</span><span>：中国电力出版社</span><span>，2003</span></li><li class="reference-item reference-item--type2 more" id="reference-[44]-12654100-wrap">
+<span class="index">44.</span>
+<a class="gotop anchor"  name="refIndex_44_12654100" id="refIndex_44_12654100" title="向上跳转" href="#ref_[44]_12654100">&nbsp;&nbsp;</a>
+<span>李刚</span><span class="text">．疯狂Java讲义（第3版）</span><span>：电子工业出版社</span><span>，2014</span></li><li class="reference-item reference-item--type2 more" id="reference-[45]-12654100-wrap">
+<span class="index">45.</span>
+<a class="gotop anchor"  name="refIndex_45_12654100" id="refIndex_45_12654100" title="向上跳转" href="#ref_[45]_12654100">&nbsp;&nbsp;</a>
+<span>Bruce Eckel</span><span class="text">．Java编程思想（第4版）</span><span>：机械工业出版社</span><span>，2007</span></li><li class="reference-item reference-item--type2 more" id="reference-[46]-12654100-wrap">
+<span class="index">46.</span>
+<a class="gotop anchor"  name="refIndex_46_12654100" id="refIndex_46_12654100" title="向上跳转" href="#ref_[46]_12654100">&nbsp;&nbsp;</a>
+<span>Darwin</span><span class="text">．Java经典实例（第二版）</span><span>：中国电力出版社</span><span>，2009</span></li><li class="reference-item reference-item--type3 more" id="reference-[47]-12654100-wrap">
+<span class="index">47.</span>
+<a class="gotop anchor"  name="refIndex_47_12654100" id="refIndex_47_12654100" title="向上跳转" href="#ref_[47]_12654100">&nbsp;&nbsp;</a>
+<span class="text">吕凤翥，马皓.普通高等教育“ 十一五” 国家级规划教材——《Java语言程序设计》[J].计算机教育,2007(23).</span>
+</li><li class="reference-item reference-item--type3 more" id="reference-[48]-12654100-wrap">
+<span class="index">48.</span>
+<a class="gotop anchor"  name="refIndex_48_12654100" id="refIndex_48_12654100" title="向上跳转" href="#ref_[48]_12654100">&nbsp;&nbsp;</a>
+<span class="text">孙媛.讨论JAVA语言的现状及发展[J].科技传播,2010(7).</span>
+</li><li class="reference-item reference-item--type3 more" id="reference-[49]-12654100-wrap">
+<span class="index">49.</span>
+<a class="gotop anchor"  name="refIndex_49_12654100" id="refIndex_49_12654100" title="向上跳转" href="#ref_[49]_12654100">&nbsp;&nbsp;</a>
+<span class="text">刘振东.JAVA语言在远程网络教学中的应用[J].计算机教学与教育信息化,2011(12).</span>
+</li><li class="reference-item reference-item--type3 more" id="reference-[50]-12654100-wrap">
+<span class="index">50.</span>
+<a class="gotop anchor"  name="refIndex_50_12654100" id="refIndex_50_12654100" title="向上跳转" href="#ref_[50]_12654100">&nbsp;&nbsp;</a>
+<span class="text">王汝传.一种新型的程序设计语言——JAVA语言[J].南京邮电学院学报,1996(16).</span>
+</li><li class="reference-item reference-item--type3 more" id="reference-[51]-12654100-wrap">
+<span class="index">51.</span>
+<a class="gotop anchor"  name="refIndex_51_12654100" id="refIndex_51_12654100" title="向上跳转" href="#ref_[51]_12654100">&nbsp;&nbsp;</a>
+<span class="text">付玮.Java语言及其开发技术的回顾与展望[J].科技广场,2007(3).</span>
+</li></ul>
+</dd>
+</dl>
+<div id="open-tag">
+<div class="open-tag-title">词条标签：</div>
+<dd id="open-tag-item">
+<span class="taglist">
+软件
+</span>
+，<span class="taglist">
+互联网
+</span>
+</dd>
+<div class="open-tag-collapse" id="open-tag-collapse"></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="side-content">
+<div class="summary-pic">
+<a href="/pic/Java/85979/0/b03533fa828ba61ef518ba0d4c34970a304e5919?fr=lemma&amp;ct=single" target="_blank" nslog-type="10002401">
+<img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=af18103e1cdfa9ecfd2e51115aeb903e/b03533fa828ba61ef518ba0d4c34970a304e5919.jpg" />
+<button class="picAlbumBtn"><em></em><span>图集</span></button>
+<div>Java图册</div>
+</a>
+</div>
+<div class="tashuo-right" id="tashuo_right">
+<div class="tashuo-right-content-essence">
+<div class="J-items">
+</div>
+</div>
+</div>
+<div class="lemmaWgt-promotion-vbaike">
+<div class="promotion_title">V百科<a href="/vbaike#gallary" target="_blank">往期回顾</a></div>
+<div class="promotion_viewport">
+<dl>
+</dl>
+<div class="promotion_viewport_pager"></div>
+</div>
+</div><div class="lemmaWgt-promotion-rightPreciseAd" data-lemmaId="85979" data-lemmaTitle="Java"></div><div class="lemmaWgt-sideRecommend">
+<a name="zhixinWrap" class="qnAnchor"></a>
+<div class="zhixin-box" id="zhixinWrap" data-source="" data-newLemmaId="85979">
+</div>
+<form id="zhixinErrorForm" class="hidden" action="https://sp2.baidu.com/-uV1bjeh1BF3odCf/index.php/feedback/zx/baikeJC" target="zhixinSubErr" method="post">
+<input class="js-url" name="fb_html_url" type="hidden" />
+<input class="js-query" name="fb_query" type="hidden" />
+<input class="js-title" name="fb_card_title" type="hidden" />
+<input class="js-content" name="fb_content" type="hidden" />
+<input class="js-souceId" name="fb_source_id" type="hidden" />
+</form>
+<iframe id="zhixinSubErr" name="zhixinSubErr" style="display:none" frameborder="0"></iframe>
+</div>
+<div class="lemmaWgt-promotion-slide">
+<div class="promotion_viewport">
+<dl>
+</dl>
+<div class="promotion_viewport_pager"></div>
+</div>
+</div><div class="lemmaWgt-promotion-rightBigAd">
+</div><dl class="side-box lemma-statistics">
+<dt class="title">词条统计</dt>
+<dd class="description split-line">
+<ul>
+<li>浏览次数：<span id="j-lemmaStatistics-pv"></span>次</li>
+<li>编辑次数：652次<a href="/historylist/Java/85979" class="nslog:1021" target="_blank">历史版本</a></li>
+<li>
+<span class="latest-title">最近更新：</span>
+<span class="latest-content">
+<a class="show-userCard" data-uid="11995809" title="查看此用户资料" target="_blank" href="http://www.baidu.com/p/w_ou"
+                     nslog-type="1022">w_ou</a><span class="j-modified-time" style="display:none">（2018-09-01）</span>
+</span>
+</li>
+</ul>
+</dd>
+<dt class="title">突出贡献榜</dt>
+<dd class="description excellent-description">
+<ul>
+<li>
+<a title="查看此用户资料" class="usercard show-userCard" data-uid="270915179" username="nde54440" target="_blank" href="http://www.baidu.com/p/nde54440?from=wk">nde54440</a>
+<a href="https://baike.baidu.com/kedou" 
+                        title="百科蝌蚪团" target="_blank" class="contribute-flag-container">
+<img src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaStatistics/img/contribute-flag-1_b15774c.png" alt="" class="contribute-flag-icon">
+</a>
+<div class="right">
+<a target="_blank" href="http://baike.baidu.com/tese"><img align="absmiddle" title="特色词条" alt="特色词条" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaStatistics/img/distinctiveIcon_1bb413a.png"></a>
+<a target="_blank" href="http://baike.baidu.com/view/12878522.htm"><img align="absmiddle" alt="优质版本" title="优质版本" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaStatistics/img/perfect_6155b29.png"></a>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="side-catalog" style="visibility:hidden">
+<div class="side-bar">
+<em class="circle start"></em>
+<em class="circle end"></em>
+</div>
+<div class="catalog-scroller">
+<dl class="catalog-list">
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#1" class="title-link">
+<span class="text">
+<span class="title-index">1</span>
+<span class="title-link" nslog-type="10002802">发展历程</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#2" class="title-link">
+<span class="text">
+<span class="title-index">2</span>
+<span class="title-link" nslog-type="10002802">编程开发</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#2_1" class="title-link">
+<span class="text">
+<span class="title-index">2.1</span>
+<span class="title-link" nslog-type="10002802">编程环境</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#2_2" class="title-link">
+<span class="text">
+<span class="title-index">2.2</span>
+<span class="title-link" nslog-type="10002802">编程工具</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#3" class="title-link">
+<span class="text">
+<span class="title-index">3</span>
+<span class="title-link" nslog-type="10002802">语言特点</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#4" class="title-link">
+<span class="text">
+<span class="title-index">4</span>
+<span class="title-link" nslog-type="10002802">工作原理</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#5" class="title-link">
+<span class="text">
+<span class="title-index">5</span>
+<span class="title-link" nslog-type="10002802">语言基础</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#5_1" class="title-link">
+<span class="text">
+<span class="title-index">5.1</span>
+<span class="title-link" nslog-type="10002802">基本数据结构</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#5_2" class="title-link">
+<span class="text">
+<span class="title-index">5.2</span>
+<span class="title-link" nslog-type="10002802">关键字</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#5_3" class="title-link">
+<span class="text">
+<span class="title-index">5.3</span>
+<span class="title-link" nslog-type="10002802">运算符</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#5_4" class="title-link">
+<span class="text">
+<span class="title-index">5.4</span>
+<span class="title-link" nslog-type="10002802">程序举例</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#6" class="title-link">
+<span class="text">
+<span class="title-index">6</span>
+<span class="title-link" nslog-type="10002802">语言标准</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#7" class="title-link">
+<span class="text">
+<span class="title-index">7</span>
+<span class="title-link" nslog-type="10002802">语言规范</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#8" class="title-link">
+<span class="text">
+<span class="title-index">8</span>
+<span class="title-link" nslog-type="10002802">技术应用</span>
+</span>
+</a>
+</dt>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#9" class="title-link">
+<span class="text">
+<span class="title-index">9</span>
+<span class="title-link" nslog-type="10002802">学习指南</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#9_1" class="title-link">
+<span class="text">
+<span class="title-index">9.1</span>
+<span class="title-link" nslog-type="10002802">考试</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#9_2" class="title-link">
+<span class="text">
+<span class="title-index">9.2</span>
+<span class="title-link" nslog-type="10002802">教材</span>
+</span>
+</a>
+</dd>
+<dt class="catalog-title level1">
+<em class="pointer"></em>
+<a href="#10" class="title-link">
+<span class="text">
+<span class="title-index">10</span>
+<span class="title-link" nslog-type="10002802">语言评价</span>
+</span>
+</a>
+</dt>
+<dd class="catalog-title level2">
+<a href="#10_1" class="title-link">
+<span class="text">
+<span class="title-index">10.1</span>
+<span class="title-link" nslog-type="10002802">发展前景</span>
+</span>
+</a>
+</dd>
+<dd class="catalog-title level2">
+<a href="#10_2" class="title-link">
+<span class="text">
+<span class="title-index">10.2</span>
+<span class="title-link" nslog-type="10002802">贡献及影响力</span>
+</span>
+</a>
+</dd>
+<a class="arrow" href="javascript:void(0);"></a>
+</dl>
+</div>
+<div class="right-wrap">
+<a class="go-up disable" href="javascript:void(0);"></a>
+<a class="go-down" href="javascript:void(0);"></a>
+</div>
+<div class="bottom-wrap">
+<a class="toggle-button" href="javascript:void(0);" nslog-type="10002803"></a>
+<a class="gotop-button" href="javascript:void(0);" nslog-type="10002804"></a>
+</div>
+</div>
+<div id="side_box_fengchao" class="fengchao side-box" nslog="area" nslog-type="10000902">
+</div>
+<div id="side_box_unionAd" class="unionAd side-box">
+<div class="union-content"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="after-content">
+<div class="fc-guess-like new" id="fc_guess_like_new">
+<span class="logo-du">
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+</span>
+<h6>猜你关注</h6>
+<ul class="cmn-clearfix">
+</ul>
+</div>
+</div>
+</div>
+
+<div class="wgt-footer-main">
+<div class="content">
+<dl class="fresh">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-fresh"></em>新手上路</dt>
+<dd>
+<div><a target="_blank" href="/usercenter/tasks#guide">成长任务</a></div>
+<div><a target="_blank" href="/help#main01">编辑入门</a></div>
+<div><a target="_blank" href="/help#main06">编辑规则</a></div>
+<div><a target="_blank" href="/item/%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91%EF%BC%9A%E6%9C%AC%E4%BA%BA%E8%AF%8D%E6%9D%A1%E7%BC%96%E8%BE%91%E6%9C%8D%E5%8A%A1/22442459?bk_fr=pcFooter">本人编辑</a><img src="https://bkssl.bdimg.com/static/wiki-common/widget/component/footer/img/new-icon_a64774d.png" class="new-icon" alt="new"></div>
+</dd>
+</dl>
+<dl class="question">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-question"></em>我有疑问</dt>
+<dd>
+<div><a id="J-bk-feedback-query" data-lemma="Java" href="javascript:void(0);" nslog-type="10070001">我要质疑</a></div>
+<div><a target="_blank" href="https://aikefu.baidu.com/?product=bk001" nslog-type="10000003">在线客服</a></div>
+<div><a target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&fr=bks0000&kw=%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91">参加讨论</a></div>
+<div><a id="J-bk-feedback-main" href="javascript:void(0);">意见反馈</a></div>
+</dd>
+</dl>
+<dl class="suggestion">
+<dt><em class="cmn-icon cmn-icons cmn-icons_footer-suggestion"></em>投诉建议</dt>
+<dd>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=1">举报不良信息</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=2">未通过词条申诉</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=6">投诉侵权信息</a></div>
+<div><a target="_blank" href="http://help.baidu.com/newadd?prod_id=10&category=5">封禁查询与解封</a></div>
+</dd>
+</dl>
+</div>
+<div class="copyright">©2018&nbsp;Baidu&nbsp;<a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;|&nbsp;<a href="http://help.baidu.com/question?prod_en=baike&class=89&id=1637" target="_blank">百科协议</a>&nbsp;|&nbsp;<a href="http://help.baidu.com/question?prod_id=10&class=690&id=1001779" target="_blank">隐私政策</a>&nbsp;|&nbsp;<a href="/operation/cooperation" target="_blank">百度百科合作平台</a>&nbsp;|&nbsp;<span>京ICP证030173号&nbsp;</span><img class="copyright-img" width="13" height="16" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/copy_rignt_24.png"></div>
+<p class="recordcode"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001" target="_blank"><i class="icon-police"></i>京公网安备11000002000001号</a></p>
+</div>
+
+
+<div class="lemmaWgt-searchHeader">
+<div class="layout cmn-clearfix">
+<div class="wgt-searchbar wgt-searchbar-new wgt-searchbar-simple cmn-clearfix ">
+<div class="logo-container">
+<a class="logo cmn-inline-block" title="到百科首页" href="/">
+<span class="cmn-baike-logo">
+<em class="cmn-icon cmn-icons cmn-icons_logo-bai"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-du"></em>
+<em class="cmn-icon cmn-icons cmn-icons_logo-baike"></em>
+</span>
+</a>
+</div>
+<div class="search">
+<div class="form">
+<form id="searchForm" action="/search/word" method="GET" target="_self">
+<input id="query" nslog="normal" nslog-type="10080015" name="word" type="text" autocomplete="off" autocorrect="off" value="Java" /><button id="search" nslog="normal" nslog-type="10080013" type="button">进入词条</button>
+</form>
+<form id="searchLemmaForm" action="/search" method="GET" target="_self">
+<input id="searchLemmaQuery" name="word" type="hidden" />
+<input name="pn" type="hidden" value="0" />
+<input name="rn" type="hidden" value="0" />
+<input name="enc" type="hidden" value="utf8" />
+</form>
+<ul id="suggestion" class="suggestion">
+<div class="sug"></div>
+<li class="extra">
+<span id="clear" style="margin-right:8px;">清除历史记录</span><span id="close" nslog="normal" nslog-type="10080016">关闭</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tool-buttons">
+<a class="toolButtons-edit button j-edit-link" href="javascript:;" nslog-type="10010001"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_edit-hollow"></em>编辑</a>
+<a class="toolButtons-collect button" href="javascript:;" nslog-type="10010002"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-hollow"></em><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_star-solid"></em>收藏</a>
+<a class="toolButtons-vote button top-vote" href="javascript:;" nslog-type="10010003"><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-hollow"></em><em class="cmn-icon wiki-lemma-icons wiki-lemma-icons_zan-solid"></em><span class="j-tool-btn-vote-num">赞</span></a>
+</div>
+<div class="user-info">
+<a class="user-link unlogin" href="javascript:;" nslog-type="10010008" target="_blank">登录</a>
+</div>
+</div></div>
+<div class="new-bdsharebuttonbox new-side-share" id="side-share">
+<span class="title">分享</span>
+<div class="side-border">
+<div class="triangle"></div>
+<a class="share-link bds_qzone"  href="javascript:void(0);" nslog-type="10060101">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qzone"></em>
+</a>
+<a class="share-link bds_tsina" href="javascript:void(0);" nslog-type="10060301">
+<em class="cmn-icon cmn-icons cmn-icons_logo-sina-weibo"></em>
+</a>
+<a class="bds_wechat"  href="javascript:void(0);" nslog-type="10060001">
+<em class="cmn-icon cmn-icons cmn-icons_logo-wechat"></em>
+</a>
+<a class="share-link bds_tqq"  href="javascript:void(0);" nslog-type="10060201">
+<em class="cmn-icon cmn-icons cmn-icons_logo-qq"></em>
+</a>
+</div>
+</div>
+<div class="qrcode-wrapper" id="layer" style="display: none">
+<div class="bd_weixin_popup_header">
+<em class="cmn-icon cmn-icons cmn-icons_close"></em>
+<span>分享到微信朋友圈</span>
+</div>
+<div id="wechat-qrcode-img"></div>
+<div class="bd_weixin_popup_footer">打开微信“扫一扫”即可将网页分享至朋友圈</div>
+</div>
+<div></div><div></div>
+
+</body><script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-common/js/mod_4302fe0.js"></script>
+<script type="text/javascript">require.resourceMap({"res":{"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom_717775e.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class_cafca1f.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper_23028b9.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting_01d8d6b.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager_2727a1b.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid_6bbbaea.js"},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances_7dddc6d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/default-setting.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/event-manager.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/guid.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy_6959de6.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll_b7a6463.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry_2c0373a.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail_3eff27a.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar_324e0f2.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard_1180272.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel_53033c9.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll_3c4108d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection_aaa3a54.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch_75a2a8d.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize_58cc36f.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/class.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/click-rail.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/drag-scrollbar.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/keyboard.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/mouse-wheel.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/native-scroll.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/selection.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/handler/touch.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update_c58a304.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/dom.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/lib/helper.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/instances.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-geometry.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update-scroll.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main_d8498f6.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/destroy.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/initialize.js","wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/plugin/update.js"]},"wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/index_0021e06.js","deps":["wiki-lemma:widget/lemma_content/configModule/secondsKnow/perfect-scrollbar/src/js/main.js"]},"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/lemmaInsert_aa8222e.js","pkg":"wiki-lemma:p5","deps":["wiki-common:widget/component/nslog/nslog.js"]},"wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/tangram.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaRelation/tangram_459492a.js","pkg":"wiki-lemma:p5"},"wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip.js":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip_53efc29.js","deps":["wiki-common:widget/lib/jquery/jquery.js","wiki-common:widget/lib/jsmart/jsmart.js","wiki-common:widget/component/nslog/nslog.js"]}},"pkg":{"wiki-lemma:p5":{"url":"https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma-module-lemmaRelation_9d255dc.js"}}});</script><script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-common/pkg/wiki-common-base_2117316.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/pkg/wiki-lemma_d8a4522.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/logMap_2a454f1.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/secondsKnow/secondsKnow_e3a59d2.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/XRegExp_2ce0ee9.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/shCore_9783b01.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/lemmaCode/script/shBrushJava_9fd3e5e.js"></script>
+<script type="text/javascript" src="https://bkssl.bdimg.com/static/wiki-lemma/widget/lemma_content/configModule/zhixin/zhixin_58e6342.js"></script>
+<script type="text/javascript">!function(){  var $ = require('wiki-common:widget/lib/jquery/jquery'),
+    userbar = require('wiki-common:widget/component/userbar-n/userbar-n');
+    
+  userbar.buildUserbar($('#j-wgt-userbar'), null);
+}();
+!function(){  require('wiki-common:widget/component/headTabBar/headTabBar');
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      initSearchbar = require('wiki-common:widget/component/searchbar-n/searchbar');  
+    initSearchbar($('.wgt-searchbar-main'));
+  }();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var cookie = require('wiki-common:widget/util/cookie');
+    if (!cookie.get('baikedeclare')) {
+        $('#J-declare-wrap').css('display', 'block');
+    }
+    $('#J-declare-close').on('click', function () {
+        // 用户关闭后，不再显示，这里暂设过期时间为1年
+        cookie.set('baikedeclare', 'showed', {
+            expires: 365 * 60 * 60 * 24 * 1000,
+            path: '/'
+        });
+        $('#J-declare-wrap').css('display', 'none');
+    });
+}();
+!function(){var $ = require('wiki-common:widget/lib/jquery/jquery');
+
+var timer = '';
+
+$('.wgt-navbar').on('mouseenter', 'dl', function() {
+  clearTimeout(timer);
+  timer = setTimeout(function() {
+    $('.wgt-navbar').addClass('wgt-navbar-hover');
+  }, 300);
+}).on('mouseleave', function() {
+  clearTimeout(timer);
+  $('.wgt-navbar').removeClass('wgt-navbar-hover');
+}).on('click', 'a', function() {
+  clearTimeout(timer);
+  $('.wgt-navbar').removeClass('wgt-navbar-hover');
+});
+}();
+!function(){    require('wiki-lemma:widget/lemma_content/configModule/secondsKnow/secondsKnow')({"secondsKnow":[{"videoSrc":{"type":"baikePlayer","secondKind":"1","secondId":205073,"mid":"mda-X11oPA8lgXMtZ6QW","cover":"https:\/\/gss3.bdstatic.com\/-Po3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D685%2C390%2C0\/sign=2d53487bdb09b3deebeab728aa825ab9\/3bf33a87e950352abd41ca1b5943fbf2b2118b85.jpg","cover_small":"https:\/\/gss3.bdstatic.com\/-Po3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D280%2C150%2C0\/sign=9be34306b6315c6043c038afeb8cf92b\/3bf33a87e950352abd41ca1b5943fbf2b2118b85.jpg"},"coverSrc":"3bf33a87e950352abd41ca1b5943fbf2b2118b85","title":"\u89e3\u5bc6Java\u7f16\u7a0b\u5f00\u53d1","mediaId":"mda-X11oPA8lgXMtZ6QW","secondId":205073}],"pageBg":null,"type":"normal","orgId":null}, 85979, 'Java');
+}();
+!function(){        require('wiki-lemma:widget/lemma_content/mainContent/polysemantList/polysemantList')('Java');
+    }();
+!function(){        var $ = require('wiki-common:widget/lib/jquery/jquery');
+        var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+        // 展现策略
+        rightCheck.editView('85979', function(res) {
+            if (!res.errno) {
+                if (res.data.divide) {
+                    $('.top-tool .split-icon').css('display', 'block');
+                }
+            }
+        });
+    }();
+!function(){    var nslog = require('wiki-common:widget/component/nslog/nslog');
+	require.async(["wiki-lemma:widget/basicElement/collect/collect"],function(collect){
+		collect({
+            newLemmaId:"85979",
+			lemmaId:"29",
+			subLemmaId:"12654100"
+		});
+	});
+}();
+!function(){    require.async(["wiki-lemma:widget/basicElement/topShare/topShare"],function(topShare){
+        topShare({
+            newLemmaId: '85979'
+        });
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+    var nsLog = require('wiki-common:widget/component/nslog/nslog');
+    
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 'inline-block');
+                // 编辑和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .edit-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .edit-lemma').before('<br/><br/>');
+                  }
+                }
+            } else {
+                nsLog('10003104');              
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+                // 锁定和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .lock-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .lock-lemma').before('<br/><br/>');
+                  }
+                }
+            }
+        } else {
+            if ('1') {
+                $('.lemmaWgt-lemmaTitle .edit-lemma').css('display', 'inline-block');
+                // 编辑和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .edit-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .edit-lemma').before('<br/><br/>');
+                  }
+                }
+            } else {
+                nsLog('10003104');  
+                $('.lemmaWgt-lemmaTitle .lock-lemma').show();
+                // 锁定和申请本人实名验证保证同一行展示
+                if ($('.lemmaWgt-lemmaTitle .personal').length > 0) {
+                  if ($('.lemmaWgt-lemmaTitle .lock-lemma').offset().left > $('.lemmaWgt-lemmaTitle .personal').offset().left) {
+                    $('.lemmaWgt-lemmaTitle .lock-lemma').before('<br/><br/>');
+                  }
+                }
+            }
+        }
+    });
+}();
+!function(){	require('wiki-lemma:widget/lemma_content/mainContent/basicInfo/basicInfo')();
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var nslog = require('wiki-common:widget/component/nslog/nslog');
+    nslog(10002701);
+    $('.lemmaWgt-lemmaCatalog a').on('click', function () {
+           nslog(10002702);
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+
+    // 展现策略
+    rightCheck.editView('85979', function(res) {
+        if (!res.errno) {
+            if (res.data.edit) {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        } else {
+            if ('1') {
+                $('.para-title .edit-icon').css('display', 'block');
+            }
+        }
+    });
+}();
+!function(){        SyntaxHighlighter.all();
+    }();
+!function(){	require.async(["wiki-common:widget/lib/jquery/jquery","wiki-lemma:widget/lemma_content/mainContent/albumList/albumList","wiki-common:widget/component/nslog/nslog"],function($,AlbumList,nslog){
+		var list=new AlbumList({
+			newLemmaId:"85979",
+			lemmaTitle:"Java",
+			lemmaId:"29",
+			subLemmaId:"12654100",
+			data:[{"coverpic":"b03533fa828ba61ef518ba0d4c34970a304e5919","width":670,"height":503,"desc":"\u8bcd\u6761\u56fe\u7247","total":8,"coverurl":"http:\/\/f.hiphotos.baidu.com\/baike\/s%3D235\/sign=c69b08d0d862853596e0d522a5ee76f2\/b03533fa828ba61ef518ba0d4c34970a304e5919.jpg"}]
+		});
+		!!window.ScriptLazyLoad && window.ScriptLazyLoad.regist({
+			dom:$('.album-list'),
+			loadFunc:function(){
+				list.load();
+				nslog(1258);
+			},
+			distance:500
+		});
+	});
+}();
+!function(){    require.async(["wiki-lemma:widget/lemma_content/mainContent/tashuo/tashuo"],function(init){
+        init();
+    });
+}();
+!function(){        require.async(['wiki-lemma:widget/lemma_content/mainContent/lemmaRelation/lemmaInsert'], function(init) {
+            init({ // 关系化统计需求--传参  shangwenbin
+                lemmaId: "29",
+                newLemmaId: "85979",
+                subLemmaId: "12654100",
+                lemmaTitle: "Java"
+            });
+        });
+    }();
+!function(){		require.async(["wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReference","wiki-lemma:widget/lemma_content/mainContent/lemmaReference/lemmaReferenceTip/lemmaReferenceTip"],function(Reference,ReferenceTip){
+			new Reference({
+				subLemmaId:"12654100"
+			});
+			new ReferenceTip({
+				subLemmaId:"85979",
+				lemmaTitle:"Java",
+				reference:[{"type":"2","author":"\u674e\u521a","title":"\u75af\u72c2Java\u8bb2\u4e49\uff08\u7b2c2\u7248\uff09","publisher":"\u7535\u5b50\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2014","refPage":"2","index":1,"count":"1"},{"type":"2","author":"\u8d75\u666f\u6656","title":"Java \u7a0b\u5e8f\u8bbe\u8ba1","publisher":"\u5317\u4eac\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2005","refPage":"1-2","index":2},{"type":"2","author":"\u660e\u65e5\u79d1\u6280","title":"Java\u4ece\u5165\u95e8\u5230\u7cbe\u901a\uff08\u7b2c3\u7248\uff09","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2014","refPage":"","index":3},{"type":"3","text":"\u674e\u664b.Java\u7684\u6628\u5929\uff0c\u4eca\u5929\u548c\u660e\u5929[J].\u4fe1\u606f\u4e0e\u7535\u8111,2011(1).","index":4,"count":"2"},{"type":"2","author":"\u4efb\u54f2","title":"JAVA\u6280\u672f\u5e94\u7528\u57fa\u7840","publisher":"\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2009","refPage":"4-6","index":5},{"type":"2","author":"\u8463\u4e91\u94ee\uff0c\u9648\u5343\uff0c\u6885\u60e0\u5e73","title":"Java\u6280\u672f\u5e94\u7528","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2007","refPage":"2","index":6},{"type":"2","author":"\u5468\u5fd7\u660e","title":"\u6df1\u5165\u7406\u89e3Java\u865a\u62df\u673a","publisher":"\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2011","refPage":"6","index":7},{"type":"2","author":"\u674e\u660e\uff0c\u9648\u4eac\u6c11\uff0c\u9676\u98de\u98de","title":"Java\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u5e94\u7528 ","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2010","refPage":"3-4","index":8},{"type":"3","text":"\u90d1\u60a6.2006\uff1a\u5f00\u6e90\u7cbe\u5f69\u4e00\u5e74[J].\u4e2d\u56fd\u8ba1\u7b97\u673a\u7528\u6237,2006(50).","index":9,"count":"1"},{"type":"1","title":"\u8be6\u8baf\uff1a\u7532\u9aa8\u6587\u5c06\u4ee574\u4ebf\u7f8e\u5143\u6536\u8d2dSun","url":"\/redirect\/7b49cidE_4L6nqyzX05n_xlaY_5mO22QYm8qMz4g-MOtffw7da5k5IL3pkQXyFKpMq_p_dY778PIeBk9yDWOOQbn7ZhNaUEillpviUrM8hVl5YAm","site":"\u65b0\u6d6a","publishDate":"","refDate":"2016-05-31","index":10},{"type":"1","title":"Oracle\u53d1\u5e03Java 8\u6b63\u5f0f\u7248\u53caJDK 8","url":"\/redirect\/55252tc5fOL7R6U4sI7esmZb-Ar40p3vJNyRo4FQUVNy7phfx40E1I975mFfnV26CErKjm9QQdrzfRPqiFkwY-XGUayP78X_a7pgO_4yaZkggzpUAms6r2U","site":"CSDN","publishDate":"","refDate":"2016-05-30","index":11,"count":"1"},{"type":"1","title":"Java Platform Standard Edition 8 Documentation","url":"\/redirect\/77b3qlE6WOvbe9x5rL_MKPwHBeJcS4JvgVUUUNcjRR5vaGcJui06MbhEx_4jqilvPBqC6ibVKmzOA6UyfusqUekw7w7ZzuagVd9YQQ","site":"oracle","publishDate":"","refDate":"2016-05-31","index":12,"count":"2"},{"type":"2","author":"\u738b\u8587\uff0c\u675c\u5a01","title":"Java\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u5b9e\u8df5","publisher":"\u534e\u4e2d\u79d1\u6280\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2010","refPage":"9","index":13,"count":"1"},{"type":"2","author":"\u5468\u5fd7\u660e","title":"\u6df1\u5165\u7406\u89e3Java\u865a\u62df\u673a","publisher":"\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2011","refPage":"4","index":14,"count":"1"},{"type":"2","author":"\u738b\u8587\uff0c\u675c\u5a01","title":"Java\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u5b9e\u8df5","publisher":"\u534e\u4e2d\u79d1\u6280\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2010","refPage":"10","index":15},{"type":"1","title":"Eclipse","url":"\/redirect\/f4abtFYLRYlNVBQNrAqFGmIt71bJRdPLOJ6fGRzbEZuLc2das81f5fPuJdk-mUP5Bw","site":"Eclipse\u5b98\u7f51","publishDate":"","refDate":"2016-05-31","index":16},{"type":"1","title":"idea","url":"\/redirect\/63f2cNwKESDp8HGY8EArO7H5pa-lb9XRHeUGF2BDy6jrjD3fm9__Y7x-h7msNSrTIY7LAPM4H24yFj0","site":"idea","publishDate":"","refDate":"2016-05-27","index":17},{"type":"2","author":"\u5f90\u6797\u6797","title":"\u96f6\u70b9\u8d77\u98de\u5b66Java Web\u5f00\u53d1","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2013","refPage":"19","index":18},{"type":"1","title":"\u90a3\u4e9b\u5e74\uff0cJava\u7a0b\u5e8f\u5458\u7528\u8fc7\u7684\u5f00\u53d1\u5de5\u5177","url":"\/redirect\/704dXUO0rxkJf-Zzoqz2d_1V04c-cEmbiwV38dYtBNiVlJzSOlCagI2Ve9EgEmHO9LYOWEMHIOonzidSMlBwVFUlA-U7nbw0PZ0o","site":"CSDN","publishDate":"","refDate":"2016-05-30","index":19},{"type":"3","text":"\u7a0b\u864e.Java\u8bed\u8a00\u7684\u7279\u70b9[J].\u73b0\u4ee3\u79d1\u5b66\u4eea\u5668,1997(2).","index":20,"count":"1"},{"type":"2","author":"\u6bdb\u7389\u8403\uff0c\u90b1\u5c11\u660e\uff0c\u6768\u6587\u8273","title":"\u8f6f\u4ef6\u9879\u76ee\u5b9e\u8df5\u6848\u4f8b\u6559\u7a0b","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2014","refPage":"42","index":21,"count":"1"},{"type":"2","author":"\u738b\u8587\uff0c\u675c\u5a01","title":"Java\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u5b9e\u8df5","publisher":"\u534e\u4e2d\u79d1\u6280\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2010","refPage":"8","index":22},{"type":"2","author":"Cay S. Horstmann","title":"Java\u6838\u5fc3\u6280\u672f\uff08\u5377I\uff09","publisher":"\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2008","refPage":"","index":23},{"type":"2","author":"\u660e\u65e5\u79d1\u6280","title":"Java\u4ece\u5165\u95e8\u5230\u7cbe\u901a\uff08\u7b2c3\u7248\uff09","publisher":"\u6e05\u534e\u5927\u5b66\u51fa\u7248\u793e","place":"\u5317\u4eac\u6e05\u534e\u5927\u5b66\u5b66\u7814\u5927\u53a6A\u5ea7","publishYear":"2014","refPage":"39-55","index":24,"count":"2"},{"type":"2","author":"\u8463\u4e91\u94ee\uff0c\u9648\u5343\uff0c\u6885\u60e0\u5e73","title":"Java\u6280\u672f\u5e94\u7528","publisher":"\u5317\u4eac\u4ea4\u901a\u5927\u5b66\u51fa\u7248\u793e","place":"","publishYear":"2007","refPage":"5-9","index":25},{"type":"2","author":"\u9a6c\u5c14\u5e73\uff0c\u5929\u8212","title":"\u8ba1\u7b97\u673a\u82f1\u8bed\u901f\u67e5\u624b\u518c","publisher":"\u4e2d\u56fd\u77f3\u5316\u51fa\u7248\u793e","place":"","publishYear":"2001","refPage":"508","index":26},{"type":"1","title":"ISO 20210:2015","url":"\/redirect\/0b2bufw1ogmY0zb5f5hZ10n5RQM-82h8vKyp48V4JTKDDTLAKBG5P2Mr7WxXrQGonzBcYGuDN9z_FAUhlwDqnM2TcOHJrmPhCTeq40a26PhiVzQdamyScnY9ZJ589b-iWYYcH8NVuuC72Mk39dti","site":"ISO","publishDate":"","refDate":"2016-06-03","index":27},{"type":"1","title":"ISO\/IEC 19777-2:2006","url":"\/redirect\/3908SJ2jYfGFtzR8SmEbz6zZtLmziQBCrRaYtrvicQPd3ZUG6bfjB5uRJfjcJlz0Hmei6exuEb8tUt_mc50JO4em1NlJJFM0yVlHBs_iJF1htDZMB2YOmYzju02DnS6snOp7ow0EYhfUC7Jpch3o","site":"ISO","publishDate":"","refDate":"2016-06-03","index":28},{"type":"1","title":"ISO\/IEC TR 13066-6:2014","url":"\/redirect\/5836uZOPDknSXMFscoPQwL2gTJWwtaCgD_twu3uZynQIWCp4Gq6Lvcu5aeGxp4XNKONNiVb_qPEyV3tHvo7fR5azAPP63_J7VsJWR5D63GBiSURFwTpVugMd_6K1j3crbmM-vXJ2nacVaCuE_HXN","site":"ISO","publishDate":"","refDate":"2016-06-03","index":29},{"type":"1","title":"ISO\/IEC 30106-2:2016","url":"\/redirect\/b1f9qVKMapmhSHy17MS3mIMsAM30282CSqc-wPHsLH9VCbA_N3TvE5mkzpDwkI9MhT57fga63mJF1ARytfldFVWKtLB811iEb7Dt-G5iCLA4-KjEU7EnzQRzcOVoAyFe0op-0e2q4LuA0Rg5Uo75","site":"ISO","publishDate":"","refDate":"2016-06-03","index":30},{"type":"1","title":"ISO\/TS 10303-27:2000","url":"\/redirect\/a35bWB3x2b1axgwxeVovFoeUD90SlgDJtgCw4GFZl5kuC30bWUuXkK176JNY7ht-3HlIa4kItgJRBCablW8R4DJIIyCK14tzfkBSChK6wFPqVUV7Y7Vv3ZwMH1zdZg3x2GN9pQzBYQNZuiqKU4CM","site":"ISO","publishDate":"","refDate":"2016-06-03","index":31},{"type":"2","author":"\u6234\u4e3d\u840d\uff0c\u674e\u78ca\uff0c\u8bb8\u6c38\u8f89","title":"Java ME\u624b\u673a\u6e38\u620f\u5f00\u53d1\u4ece\u5165\u95e8\u5230\u7cbe\u901a","publisher":"\u56fd\u9632\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2009","refPage":"6","index":32},{"type":"1","title":"Java SE","url":"\/redirect\/79d7tNqgImUDDMRYoKJqDA7rH7x4jyQw1iwB0DgaXXHNrM_i5lZi1VArJw5YWQ34u0I_76z-vgzXE0fGyiTLgFkDZJGqbEpLCGEKjf3ilRgWsfWkoQ","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":33,"count":"1"},{"type":"1","title":"Java SE","url":"\/redirect\/094eAqrJTTr3F0FXHLXOUFoOMgTCITWJ9Ye_DAIj_5h2antU0BnrGt-qobbaer_fAManyrE9Wx4LZ329PAWoMlwsRVrhgX6HHqFL3ESjViShF92zYQ","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":34},{"type":"1","title":"Java ME","url":"\/redirect\/104flUm2mGfFzeMQ7ElkZIWo4gfLE5P2AyPkIoGe_Kx3SbPKIvEGSMBzlDz5h1_bmdJf5CxwkbQ80w9LHCvqOe88T_OVTJUqatKo3DgHWI9wo6x2","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":35},{"type":"1","title":"OSS","url":"\/redirect\/8c78F0YZn4GVYwLeGrgc8dAT4l8mlPoPc3WXJv4hY5UxGIYUS6j_kXM75UPXVKSylP5tHWp2teGwuXXnc4-3EnBA8mcCgXbRmnKl6LVYuCl1","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":36},{"type":"1","title":"JAIN","url":"\/redirect\/c199CqqGVn64bkoBN_J0mqiY9O8JaBusgq_cIC0PCje2-JRal_qY8edKRymgSiHJL9QAecwB2GmF5ylDkJHcGHif6REhzxPNsj0IR_y4OOYM","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":37},{"type":"1","title":"XML","url":"\/redirect\/bb6bFxzPJFp9z7siT-GHUhS06EoafwPfFm2NmGUxYvpVfRMhArhCLp12UFGp5LGK-Mb8UykUcyEkJ4Rw3OT69W-MBcmZAJnt3q1dpnTJnJFh","site":"Java Community Process","publishDate":"","refDate":"2016-06-02","index":38},{"type":"2","author":"\u674e\u949f\u5c09\uff0c\u9648\u4e39\u4e39\uff0c\u5f20\u632f\u5764","title":"Java\u7f16\u7a0b\u5b9d\u5178","publisher":"\u4eba\u6c11\u90ae\u7535\u51fa\u7248\u793e","place":"","publishYear":"2010","refPage":"5","index":39},{"type":"1","title":"\u73b0\u5b9e\u4e16\u754c\u4e2d\u54ea\u4e9b\u5730\u65b9\u7528\u5230\u4e86Java","url":"\/redirect\/bde9wQ5qL1ucbwJeMI8ohJ-K-tnomMf6r1lItg2KSmp4BuqUhGsN9kVVUnFkBG_RMfKeNuz0VMQ2viW9Ts50RihlkbCJzDq5KIWl","site":"CSDN","publishDate":"2014-12-10","refDate":"2016-05-30","index":40,"count":"1"},{"type":"3","text":"\u67f3\u82b3.\u5173\u4e8eSUN\u516c\u53f8\u7684Java\u8ba4\u8bc1\u8003\u8bd5[J].\u7535\u8111\u77e5\u8bc6\u4e0e\u6280\u672f,2003(2).","index":41},{"type":"3","text":"\u90b5\u519b.Sun\u8ba4\u8bc1\u4ecb\u7ecd[J].\u7ee7\u7eed\u6559\u80b2,2002(4).","index":42},{"type":"2","author":"Ken Arnold","title":"Java\u7f16\u7a0b\u8bed\u8a00\uff08\u7b2c3\u7248\uff09","publisher":"\u4e2d\u56fd\u7535\u529b\u51fa\u7248\u793e","place":"","publishYear":"2003","refPage":"","index":43},{"type":"2","author":"\u674e\u521a","title":"\u75af\u72c2Java\u8bb2\u4e49\uff08\u7b2c3\u7248\uff09","publisher":"\u7535\u5b50\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2014","refPage":"","index":44},{"type":"2","author":"Bruce Eckel","title":"Java\u7f16\u7a0b\u601d\u60f3\uff08\u7b2c4\u7248\uff09","publisher":"\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e","place":"","publishYear":"2007","refPage":"","index":45},{"type":"2","author":"Darwin","title":"Java\u7ecf\u5178\u5b9e\u4f8b\uff08\u7b2c\u4e8c\u7248\uff09","publisher":"\u4e2d\u56fd\u7535\u529b\u51fa\u7248\u793e","place":"","publishYear":"2009","refPage":"","index":46},{"type":"3","text":"\u5415\u51e4\u7fe5\uff0c\u9a6c\u7693.\u666e\u901a\u9ad8\u7b49\u6559\u80b2\u201c \u5341\u4e00\u4e94\u201d \u56fd\u5bb6\u7ea7\u89c4\u5212\u6559\u6750\u2014\u2014\u300aJava\u8bed\u8a00\u7a0b\u5e8f\u8bbe\u8ba1\u300b[J].\u8ba1\u7b97\u673a\u6559\u80b2,2007(23).","index":47},{"type":"3","text":"\u5b59\u5a9b.\u8ba8\u8bbaJAVA\u8bed\u8a00\u7684\u73b0\u72b6\u53ca\u53d1\u5c55[J].\u79d1\u6280\u4f20\u64ad,2010(7).","index":48,"count":"3"},{"type":"3","text":"\u5218\u632f\u4e1c.JAVA\u8bed\u8a00\u5728\u8fdc\u7a0b\u7f51\u7edc\u6559\u5b66\u4e2d\u7684\u5e94\u7528[J].\u8ba1\u7b97\u673a\u6559\u5b66\u4e0e\u6559\u80b2\u4fe1\u606f\u5316,2011(12).","index":49,"count":"2"},{"type":"3","text":"\u738b\u6c5d\u4f20.\u4e00\u79cd\u65b0\u578b\u7684\u7a0b\u5e8f\u8bbe\u8ba1\u8bed\u8a00\u2014\u2014JAVA\u8bed\u8a00[J].\u5357\u4eac\u90ae\u7535\u5b66\u9662\u5b66\u62a5,1996(16).","index":50,"count":"2"},{"type":"3","text":"\u4ed8\u73ae.Java\u8bed\u8a00\u53ca\u5176\u5f00\u53d1\u6280\u672f\u7684\u56de\u987e\u4e0e\u5c55\u671b[J].\u79d1\u6280\u5e7f\u573a,2007(3).","index":51}]
+			});
+		});
+	}();
+!function(){        require.async(["wiki-common:widget/lib/jquery/jquery"],function($){
+            function openTagToggle(node) {
+                if ($(node).hasClass("collapse")) {
+                    $(node).removeClass("collapse");
+                    $("#open-tag").css("height", '22px');
+                } else {
+                    $(node).addClass("collapse");
+                    $("#open-tag").css("height", $("#open-tag-item").css("height"));
+                }
+            }
+            if (parseInt($("#open-tag-item").css("height")) <= 30) {
+                $('#open-tag-collapse').hide();
+            }
+            $("#open-tag-collapse").on("click", function () {
+                openTagToggle($("#open-tag")[0]);
+            });
+        });
+    }();
+!function(){    require.async(["wiki-lemma:widget/promotion/rightTashuo/rightTashuo"],function(init){
+        init({
+            lemmaId: 85979,
+            lemmaTitle: 'Java'
+        });
+    });
+}();
+!function(){        require('wiki-lemma:widget/lemma_content/configModule/zhixin/zhixin')(
+            85979,
+            'Java'
+        );
+    }();
+!function(){    require.async(["wiki-lemma:widget/lemma_content/mainContent/lemmaStatistics/lemmaStatistics"],function(init){
+        init({
+            newLemmaIdEnc:"eca9aca485477e4ed52788f4"
+        });
+    });
+}();
+!function(){	require.async(["wiki-lemma:widget/lemma_content/mainContent/sideCatalog/sideCatalog"],function(SideCatalog){
+		new SideCatalog();
+	});
+}();
+!function(){        require.async(["wiki-lemma:widget/promotion/fengchao/fengchao","wiki-lemma:widget/promotion/unionAd/unionAd"], function (init, unionAd) {
+            init({
+                newLemmaId: "85979",
+                lemmaTitle: "Java",
+                encodeLemmaTitle: "Java",
+                adManager: {"baiduXunke":1}
+            }, {
+                errFn: unionAd,
+                dom: $('#side_box_unionAd')
+            });
+        });
+    }();
+!function(){        require.async(['wiki-lemma:widget/promotion/guessLike/guessLike'], function (app) {
+            app.init({
+                lemmaTitle: 'Java',
+                adManager: {"baiduXunke":1}
+            });
+        });
+    }();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var Dialog = require("wiki-common:widget/ui/dialog/dialog");
+    var userLogin = require('wiki-common:widget/component/userLogin/userLogin');
+    var unameFiller = require('wiki-common:widget/component/unameFiller/unameFiller');
+    var rightCheck = require('wiki-lemma:widget/tools/rightCheck/rightCheck');
+    var nsLog = require('wiki-common:widget/component/nslog/nslog');
+
+            var isEnterprise = false;
+        var enterpriseOwnerUserId = 0;
+    
+    var userId = 0;
+    var editUrl = '/edit/' + encodeURIComponent('Java') + '/' + '85979';
+    var pgcUrl = '/enterprise/editpgc?lemmaId=85979';
+
+    userLogin.regist({
+        onLogin: function(user) {
+            userId = user ? user.uid : 0;
+        }
+    });
+
+    function gotoEdit(url, isMidNight) {
+        if (isMidNight) {
+            Dialog.alert({
+                title: '编辑提示',
+                subMsg: '晚23:00至次日8:00，因审核系统例行维护，您提交的版本可能需要较长时间才能通过，望您谅解。',
+                onConfirm: function() {
+                    window.location.href = url;
+                }
+            });
+        } else {
+            window.location.href = url;
+        }    
+    }
+
+    function showChoseEditDialog(pgcCallback, ugcCallback) {
+        new Dialog({
+            title: '编辑提示',
+            subMsg: '<p>您已开通企业百科服务，推荐您直接编辑“官方资料”，官方资料仅限企业百科绑定的百科账号修改，其他用户账号不可修改。</p><p>如果您想修改其他网友编辑的普通词条内容，请注意遵守百科百科编辑规则。<p>',
+            btns: [{
+            key: 'pgc',
+            text: '编辑官方资料'
+            }, {
+            style: 'white',
+            text: '修改普通词条',
+            key: 'ugc'
+            }],
+            onBtnClick: function(btnKey){
+                if (btnKey === 'pgc') {
+                    pgcCallback && pgcCallback();
+                } else if (btnKey === 'ugc') {
+                    ugcCallback && ugcCallback();
+                }
+            }
+        }).show();
+    }
+
+    function checkUserLegal(res) {
+        var legal = false;
+        switch (res.errno) {
+            case 100001:
+                nsLog('10003106');
+                userLogin.showLoginPop();
+                break;
+            case 100006:
+                unameFiller.show();
+                break;
+            default:
+                legal = true;
+        }
+        return true;
+    }
+
+    function checkUgc(res, url) {
+        if (res.errno) {
+            switch (res.errno) {
+                case 100005:
+                    alert('对不起，您目前被封禁');
+                    break;
+                case 110001:
+                    alert('对不起，该词条被锁定');
+                    break;
+                case 110007:
+                    alert('对不起，消歧页无法编辑');
+                    break;
+                case 110005:
+                    nsLog('10003101');
+                    Dialog.alert({
+                    title: '编辑提示',
+                    mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                    subMsg: '<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>四级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力达到以上要求，就可以参与编辑该词条了。</p><p><img src="https://bkssl.bdimg.com/img/baike/usercenter/growuptask/star.gif" class="star" />参加<a target="_blank" href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                    });
+                    break;
+                case 110008:
+                    nsLog('10003102');
+                    Dialog.alert({
+                    title: '编辑提示',
+                    mainMsg: '对不起，您暂时没有权限编辑该词条。',
+                    subMsg: '<p>您好，该词条内容已较丰富，现仅对百科等级达到<b>六级</b>且通过率达到<b>85%</b>的科友开放编辑。</p><p>当您通过努力达到以上要求，就可以参与编辑该词条了。</p><p><img src="https://bkssl.bdimg.com/img/baike/usercenter/growuptask/star.gif" class="star" />参加<a target="_blank" href="/usercenter#guide">成长任务</a>，更快掌握百科编辑技巧，加速升级！</p>'
+                    });
+                    break;
+                case 470001:
+                    alert('系统错误，请刷新重试');
+                    break;
+                case 110003:
+                    nsLog('10003103');
+                    Dialog.alert({
+                        title: '编辑提示',
+                        subMsg: '很抱歉，该词条有其他用户编辑的版本正在提交，您暂时无法编辑。<br/>百科建议您晚些时候再编辑该词条，或者尝试编辑其他的词条。'
+                    });
+                    break;
+            }
+        } else {
+            if (!res.data.right.noAudit) {
+                Dialog.alert({
+                    title: '编辑提示',
+                    subMsg: '很抱歉，该词条有其他用户编辑的版本正在提交，您暂时无法编辑。<br/>百科建议您晚些时候再编辑该词条，或者尝试编辑其他的词条。'
+                });
+                return;
+            }
+            gotoEdit(url, res.data.notice.isMidNight);
+        }
+    }
+
+    $(document.body).on('click', '.j-edit-link', function() {
+        nsLog('10003100');
+        var dl = $(this).attr('data-edit-dl');
+        if (dl) {
+            var url = editUrl + '?dl=' + dl;
+        } else {
+            var url = editUrl;
+        }
+
+        rightCheck.preeditCheck('85979', 'Java', '计算机编程语言', '132935961', '', function(res) {
+            if (!checkUserLegal(res)) {
+                return;
+            }
+            if (isEnterprise && enterpriseOwnerUserId === userId) {
+                showChoseEditDialog(function() {
+                    location.href = pgcUrl;
+                }, function() {
+                    checkUgc(res, url);
+                });
+            } else {
+                checkUgc(res, url);
+            }
+        });
+    });
+}();
+!function(){  require.async(["wiki-common:widget/lib/jquery/jquery","wiki-common:widget/component/footer/footer_feedback"], function($, feedback){
+    feedback({el: '#J-bk-feedback-main'});
+    feedback({el: '#J-bk-feedback-query', config: {
+        appid: 215645,
+        productLine: 20184,
+        needContactWay: false,
+        issuePlaceholder: '亲爱的百度百科用户，请在此填写您的质疑内容及原因哦～'
+      },
+      proData: {
+        "kw": $('#J-bk-feedback-query').data('lemma')
+      }
+    });
+  });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      initSearchbar = require('wiki-common:widget/component/searchbar-n/searchbar');  
+    initSearchbar($('.wgt-searchbar-simple'));
+  }();
+!function(){    require.async(["wiki-lemma:widget/tools/searchHeader/toolButtons-n/toolButtons"],function(init){
+        init({
+            lemmaId:"29",
+            subLemmaId:"12654100",
+            newLemmaId:"85979"
+        });
+    });
+}();
+!function(){    require('wiki-lemma:widget/tools/searchHeader/toolButtons-n/userInfo')();
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery'),
+      animation = require('wiki-common:widget/util/animation'),
+      nslog = require('wiki-common:widget/component/nslog/nslog'),
+      initSearchbar = require('wiki-common:widget/component/searchbar/searchbar');
+
+    var isFadeIn = false,
+        isFadeOut = false;
+
+    var fadeInAni, fadeOutAni;
+
+    $(window).on('scroll', function(e) {
+        var scrollTop = $(this).scrollTop();
+
+        if (scrollTop > 200 && !isFadeIn && $('.lemmaWgt-searchHeader').css('display') == 'none') {
+            fadeOutAni && fadeOutAni.stop();
+            fadeInAni = animation({
+                duration: 200,
+                easing: 'linear',
+                onStart: function() {
+                    isFadeOut = false;
+                    isFadeIn = true;
+                    $('.lemmaWgt-searchHeader').css('display', 'block');
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', progress)
+                },
+                onComplete: function(progress) {
+                    isFadeIn = false;
+                    nslog(10010007);
+                }
+            });
+        } else if (scrollTop <= 200 && !isFadeOut && $('.lemmaWgt-searchHeader').css('display') == 'block') {
+            fadeInAni && fadeInAni.stop();
+            fadeOutAni = animation({
+                duration: 300,
+                easing: 'linear',
+                onStart: function() {
+                    $('.lemmaWgt-searchHeader #suggestion').hide();
+                    isFadeIn = false;
+                    isFadeOut = true;
+                },
+                onStep: function(progress) {
+                    $('.lemmaWgt-searchHeader').css('opacity', 1 - progress);
+                },
+                onComplete: function(progress) {
+                    isFadeOut = false;
+                    $('.lemmaWgt-searchHeader').css('display', 'none');
+                }
+            });
+        }
+    });
+}();
+!function(){    require('wiki-lemma:widget/tools/newSideShare/qzopensl');
+    require.async(["wiki-lemma:widget/tools/newSideShare/taskSideShare"],function(taskShare){
+        taskShare.init({
+            title: 'Java',
+            desc: "Java\u662f\u4e00\u95e8\u9762\u5411\u5bf9\u8c61\u7f16\u7a0b\u8bed\u8a00\uff0c\u4e0d\u4ec5\u5438\u6536\u4e86C++\u8bed\u8a00\u7684\u5404\u79cd\u4f18\u70b9\uff0c\u8fd8\u6452\u5f03\u4e86C++\u91cc\u96be\u4ee5\u7406\u89e3\u7684\u591a\u7ee7\u627f\u3001\u6307\u9488\u7b49\u6982\u5ff5\uff0c\u56e0\u6b64Java\u8bed\u8a00\u5177\u6709\u529f\u80fd\u5f3a\u5927\u548c\u7b80\u5355\u6613\u7528\u4e24\u4e2a\u7279\u5f81\u3002Java\u8bed\u8a00\u4f5c\u4e3a\u9759\u6001\u9762\u5411\u5bf9\u8c61\u7f16\u7a0b\u8bed\u8a00\u7684\u4ee3\u8868\uff0c\u6781\u597d\u5730\u5b9e\u73b0\u4e86\u9762\u5411\u5bf9\u8c61\u7406\u8bba\uff0c\u5141\u8bb8\u7a0b\u5e8f\u5458\u4ee5\u4f18\u96c5\u7684\u601d\u7ef4\u65b9\u5f0f\u8fdb\u884c\u590d\u6742\u7684\u7f16\u7a0b\u3002Java\u5177\u6709\u7b80\u5355\u6027\u3001\u9762\u5411\u5bf9\u8c61\u3001\u5206\u5e03\u5f0f\u3001\u5065\u58ee\u6027\u3001\u5b89\u5168\u6027\u3001\u5e73\u53f0\u72ec\u7acb\u4e0e\u53ef\u79fb\u690d\u6027\u3001\u591a\u7ebf\u7a0b\u3001\u52a8\u6001\u6027\u7b49\u7279\u70b9\u3002Java\u53ef\u4ee5\u7f16\u5199\u684c\u9762\u5e94\u7528\u7a0b\u5e8f\u3001Web\u5e94\u7528\u7a0b\u5e8f\u3001\u5206\u5e03\u5f0f\u7cfb\u7edf\u548c\u5d4c\u5165\u5f0f\u7cfb\u7edf\u5e94\u7528\u7a0b\u5e8f\u7b49\u3002",
+            pic: 'http:\/\/f.hiphotos.baidu.com\/baike\/w%3D268\/sign=2b0de0fdc31b9d168ac79d67cbdfb4eb\/b03533fa828ba61ef518ba0d4c34970a304e5919.jpg',
+            url: '',
+            qqPic: 'https:\/\/gss1.bdstatic.com\/-vo3dSag_xI4khGkpoWK1HF6hhy\/baike\/whfpf%3D503%2C503%2C50\/sign=ea8e04bb8f26cffc697fecf2df3c7fa0\/b03533fa828ba61ef518ba0d4c34970a304e5919.jpg',
+            newLemmaId: '85979',
+            lemmaTitle: 'Java'
+        });
+    });
+}();
+!function(){    var $ = require('wiki-common:widget/lib/jquery/jquery');
+    var nslog = require("wiki-common:widget/component/nslog/nslog");
+    var testElem = require('wiki-common:widget/component/testElem/testElem');
+    var cmsModuleLoader = require('wiki-common:widget/component/cmsModuleLoader/cmsModuleLoader');
+
+    function requireAsync() {
+        require.async(['wiki-lemma:widget/tools/announcement/announcement']);
+    }
+
+    cmsModuleLoader('/api/wikiui/getlemmaconfig', [{
+        name: 'announcement',
+        script: 'wiki-lemma:widget/tools/announcement/announcement.js'
+    }]);
+
+    require.async(["wiki-lemma:widget/tools/lazyLoad/lazyLoad"], function(LazyLoad) {
+        new LazyLoad();
+    });
+
+    require.async(['wiki-common:widget/component/nslog/nslog','wiki-common:widget/lib/jquery/jquery'], function(nslog, $) {
+        nslog().setGlobal({
+            lemmaId: "29",
+            newLemmaId: "85979",
+            subLemmaId: "12654100",
+            lemmaTitle: "Java"
+        });
+
+        // 词条页 pv
+        nslog(9322);
+
+        // 新版头部pv（小流量）
+        if ($('.pc-header-new').length > 0) {
+            nslog(9069);
+        }
+
+        // 链接点击 pv
+        var lemmaPageRegExp = new RegExp(/\/subview\/\d+|\/view\/\d+|\/item\//i);
+        $('body').on('mousedown', 'a', function() {
+            var href = $(this).attr('href');
+            if (href && href.indexOf('/') >= 0 && href.indexOf('#') !== 0) {
+                // 链接点击 pv
+                nslog(10000001);
+                if (lemmaPageRegExp.test(href)) {
+                    // 词条页链接点击 pv
+                    nslog(10000002, window.location.href, {
+                        targetTitle: $(this).text()
+                    });
+                }
+            }
+        });
+
+        /****** 词条页站内流转需求统计 start ******/
+        (function () {
+            // 各种统计配置
+            var circulationLinkCfg = {
+                innerLink: [ // 内链
+                    '.para',
+                    '.lemmaWgt-baseInfo-simple-largeMovie',
+                    '.lemmaWgt-baseInfo-simple-largeStar',
+                    '.basic-info .basicInfo-block',
+                    '.lemma-summary',
+                    '.lemmaWgt-lemmaSummary',
+                    '.view-tip-panel',
+                    '.horizontal-module',
+                    '.lemmaWgt-roleIntroduction',
+                    '.dramaSeries .dramaSerialList',
+                    '.module-music',
+                    '.table-view',
+                    '[log-set-param="table_view"]',
+                    '.list-module',
+                    '.cell-module',
+                    '.baseBox .dl-baseinfo', // 配置后台字段
+                    '.pvBtn-box .leadPVBtnWrapper',
+                    '.drama-actor',
+                    '#staffList',
+                    '.starMovieAndTvplay',
+                    '.main_tab:not(.main_tab-defaultTab)' // 除去词条tab外的tab
+                ],
+                relationTable: '.rs-container-foot', // 关系表
+                peopleRelation: '.star-info-block.relations, .lemmaWgt-focusAndRelation', // 人物关系（明星+普通）
+                moduleActors: '.featureBaseInfo .actors, .lemmaWgt-majorActors', // 主要演员、嘉宾、主持人
+                moduleWorks: '.featureBaseInfo .works, .large-feature .works', // 代表作品
+                moduleQuarterly: '.featureBaseInfo .po_quarterly, .mian_quarterly', // 分季介绍
+                rankStar: '.rank-list.stars-rank', // 明星榜
+                rankDrama: '.drama-rank-list', // 电视剧榜
+                specialTopic: '.special-topic', // 专题模块
+                modDetailTable: '#modDetailTable', // 关系表出图
+                chuizhitu: '.chuizhitu', // 垂直化模块
+                polysemantList: '.polysemantList-wrapper' // 义项切换
+            };
+            /****** 连接统计 ******/
+            function clickNslogFn() {
+                for (var k in circulationLinkCfg) {
+                    if (k === 'innerLink') {
+                        // 词条内链到词条页
+                        var tempArr = circulationLinkCfg[k];
+                        for (var i = 0, l = tempArr.length; i < l; i++) {
+                            tempArr[i] += ' a';
+                        }
+                        var sSelector = tempArr.join(', ');
+
+                        $('body').on('mousedown', sSelector, {key: k},function(e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            var tar = $(this).attr('target') || '';
+                            if (href && href.indexOf('/') >= 0 && href.indexOf('#') !== 0
+                            && tar === '_blank' && lemmaPageRegExp.test(href)) {
+                                // 词条页普通内链点击 pv
+                                nslog(10000004, null ,{division: key});
+                            }
+                        });
+                    } else {
+                        // 模块到词条页链接
+                        $(circulationLinkCfg[k]).on('mousedown', 'a', {key: k}, function (e) {
+                            var key = e.data.key;
+                            var href = $(this).attr('href');
+                            if (href && href.indexOf('#') !== 0 && lemmaPageRegExp.test(href)) {
+                                // 词条页配置模块链接点击 pv
+                                nslog(10000004, null, {division: key});
+                            }
+                        });
+                    }
+                }
+            }
+            // 发起统计请求
+            clickNslogFn();
+
+            /****** 各模块展现量pv ******/
+            function checkModuleIsShow() {
+                var result = [];
+                for (var k in circulationLinkCfg) {
+                    if (k !== 'innerLink' && k !== 'relationTable') {
+                        !!$(circulationLinkCfg[k]).html() && result.push(k);
+                    }
+                }
+                if (result.length > 0) {
+                    nslog(10000005, null, {showModules: result.join(',')});
+                }
+            }
+            checkModuleIsShow();
+
+        })();
+        /****** 词条页站内流转需求统计 end ******/
+
+    });
+
+    // 广告接入 wikiad 统一加载
+    // log 词条页广告被拦截情况（此处 log 请求行为）
+    nslog(70000101, window.location.href, {
+        api: 'lemma-ad',
+        action: 'request'
+    });
+    var tags = [{"tagId":0,"tagName":"\u8f6f\u4ef6"},{"tagId":0,"tagName":"\u4e92\u8054\u7f51"}];
+    var tagsArray = [];
+    for (var key in tags) {
+        tagsArray.push(tags[key].tagName);
+    }
+    $.ajax({
+        type: 'GET',
+        url: '/api/wikiad/getsquirrels',
+        data: {
+            lemmaId: 85979,
+            tags: tagsArray.join()
+        },
+        cache: false,
+        dataType: 'JSON',
+        success: function (res) {
+            // log 词条页广告被拦截情况（此处 log 请求成功）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'success'
+            });
+
+            if (!res.errno) {
+                if (res.data[5]) {
+                    require.async(['wiki-lemma:widget/promotion/rightPreciseAd/rightPreciseAd'], function(rightPreciseAd) {
+                        rightPreciseAd(res.data[5]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[5][0].adId,
+                            adTitle: res.data[5][0].name,
+                            adPos: 5
+                        });
+                    });
+                } else if (res.data[1]) {
+                                        require.async(['wiki-lemma:widget/promotion/vbaike/vbaike'], function(vbaike) {
+                        vbaike(res.data[1]);
+                        for(var i in res.data[1]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[1][i].adId,
+                                adTitle: res.data[1][i].name,
+                                adPos: 1
+                            });
+                        }
+                    });
+                                    }
+                if (res.data[9]) {
+                                        require.async(['wiki-lemma:widget/promotion/rightBigAd/rightBigAd'], function(rightBigAd) {
+                        rightBigAd(res.data[9]);
+                            nslog(10002201, location.href, {
+                                adId: res.data[9][0].adId,
+                                adTitle: res.data[9][0].name,
+                                adPos: 9
+                            });
+                    });
+                                    } else if(res.data[2]) {
+                    require.async(['wiki-lemma:widget/promotion/slide/slide'], function(slide) {
+                        slide(res.data[2]);
+                        for(var i in res.data[2]) {
+                            nslog(10002201, location.href, {
+                                adId: res.data[2][i].adId,
+                                adTitle: res.data[2][i].name,
+                                adPos: 2
+                            });
+                        }
+                    });
+                }
+                if (res.data[3]) {
+                                        require.async(['wiki-lemma:widget/promotion/topAd/topAd'], function(topAd) {
+                        topAd(res.data[3]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[3][0].adId,
+                            adTitle: res.data[3][0].name,
+                            adPos: 3
+                        });
+                    });
+                                    }
+                if (res.data[4]) {
+                                        require.async(['wiki-lemma:widget/promotion/rightAd/rightAd'], function(rightAd) {
+                        rightAd(res.data[4]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[4][0].adId,
+                            adTitle: res.data[4][0].name,
+                            adPos: 4
+                        });
+                    });
+                                    }
+                if (res.data[15]) {
+                    require.async(['wiki-lemma:widget/promotion/banner/banner'], function(banner) {
+                        banner(res.data[15]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[15][0].adId,
+                            adTitle: res.data[15][0].name,
+                            adPos: 15
+                        });
+                    });
+                }
+                if (res.data[16]) {
+                    require.async(['wiki-lemma:widget/promotion/declaration/declaration'], function(declaration) {
+                        declaration(res.data[16]);
+                        nslog(10002201, location.href, {
+                            adId: res.data[16][0].adId,
+                            adTitle: res.data[16][0].name,
+                            adPos: 16
+                        });
+                    })
+                }
+            } else {
+                return;
+            }
+
+            setTimeout(function () {
+                var elemArr = {};
+                res.data[1] && res.data[1].length > 0 && (elemArr['lemma-vbaike-ad'] = $('.lemmaWgt-promotion-vbaike .promotion_viewport a:eq(0) img').get(0));
+                res.data[2] && res.data[2].length > 0 && (elemArr['lemma-slide-ad'] = $('.lemmaWgt-promotion-slide .promotion_viewport a:eq(0) img').get(0));
+                res.data[3] && res.data[3].length > 0 && (elemArr['lemma-navbar-ad'] = {
+                    node: $('.header [nslog-type="10002202"]').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.header [nslog-type="10002202"]').css('background-image').indexOf(res.data[3][0].picUrl) < 0
+                        }
+                    }
+                });
+                res.data[4] && res.data[4].length > 0 && (elemArr['lemma-side-ad'] = {
+                    node: $('.right-ad img').get(0),
+                    validations: {
+                        'noBackgroundImage': function() {
+                            return $('.right-ad img').attr('src').indexOf(res.data[4][0].picUrl) < 0
+                        }
+                    }
+                });
+                res.data[15] && res.data[15].length > 0 && (elemArr['lemma-configModule-banner'] = $('.configModuleBanner').get(0));
+                res.data[16] && res.data[16].length > 0 && (elemArr['lemma-configModule-declaration'] = $('.lemmaWgt-declaration').get(0));
+
+                testElem.log(elemArr, 70000102);
+            }, 1000);
+        },
+        error: function () {
+            // log 词条页广告被拦截情况（此处 log 请求失败）
+            nslog(70000101, window.location.href, {
+                api: 'lemma-ad',
+                action: 'error'
+            });
+        }
+    });
+
+    // 设置分享内容
+    window.BKShare.setCommon({
+        bdText: "\u3010Java_\u767e\u5ea6\u767e\u79d1\u3011Java\u662f\u4e00\u95e8\u9762\u5411\u5bf9\u8c61\u7f16\u7a0b\u8bed\u8a00\uff0c\u4e0d\u4ec5\u5438\u6536\u4e86C++\u8bed\u8a00\u7684\u5404\u79cd\u4f18\u70b9\uff0c\u8fd8\u6452\u5f03\u4e86C++\u91cc\u96be\u4ee5\u7406\u89e3\u7684\u591a\u7ee7\u627f\u3001\u6307\u9488\u7b49\u6982\u5ff5\uff0c\u56e0\u6b64Java\u8bed\u8a00\u5177\u6709\u529f\u80fd\u5f3a\u5927\u548c\u7b80\u5355\u6613\u7528\u4e24\u4e2a\u7279\u5f81\u3002Java\u8bed\u8a00\u4f5c\u4e3a\u9759\u6001\u9762\u5411\u5bf9\u8c61\u7f16\u7a0b\u8bed\u8a00\u7684\u4ee3\u8868\uff0c\u6781\u597d\u5730\u5b9e\u73b0\u4e86\u9762\u5411\u5bf9\u8c61\u7406\u8bba\uff0c\u5141\u8bb8\u7a0b\u5e8f\u5458\u4ee5\u4f18\u96c5\u7684\u601d\u7ef4\u65b9\u5f0f\u8fdb\u884c\u590d\u6742\u7684\u7f16\u7a0b\u3002Java\u5177\u6709\u7b80\u5355\u6027\u3001\u9762\u5411\u5bf9\u8c61\u3001\u5206\u5e03\u5f0f\u3001\u5065\u58ee\u6027\u3001\u5b89\u5168\u6027\u3001\u5e73\u53f0\u72ec\u7acb\u4e0e\u53ef\u79fb\u690d\u6027\u3001\u591a\u7ebf\u7a0b\u3001\u52a8\u6001\u6027\u7b49\u7279\u70b9\u3002Java\u53ef\u4ee5\u7f16\u5199\u684c\u9762\u5e94\u7528\u7a0b\u5e8f\u3001Web\u5e94\u7528\u7a0b\u5e8f\u3001\u5206\u5e03\u5f0f\u7cfb\u7edf\u548c\u5d4c\u5165\u5f0f\u7cfb\u7edf\u5e94\u7528\u7a0b\u5e8f\u7b49\u3002.....\uff08\u5206\u4eab\u81ea@\u767e\u5ea6\u767e\u79d1\uff09",
+        bdDesc: '',
+        bdUrl: 'http:\/\/baike.baidu.com\/item\/Java\/85979',
+        bdPic: '',
+        onBeforeClick: function (){
+            $('.bdshare_dialog_box').hide();
+        }
+    });
+
+    // 底部投诉带入当前页面 url
+    var map = [1, 2, 6, 5];
+    $('.wgt-footer-main .suggestion').find('a').each(function(i) {
+        $(this).attr('href', 'http://help.baidu.com/newadd?word=Java' + '&&submit_link=' + encodeURIComponent(window.location.href) + '&prod_id=10&category=' + map[i]);
+    });
+
+    // 为超出预设内容的表格添加table-responsive控制
+    $('.main-content').find('table').each(function(index) {
+        var $that = $(this);
+        if ($that.width() > 790) {
+            $that.wrap('<div class="table-responsive"></div>');
+        }
+    });
+}();
+!function(){      require('wiki-common:widget/component/psLink/psLink');
+    }();</script>
+<script type="text/javascript">
+  var Hunter = window.Hunter || {};
+  Hunter.userConfig = Hunter.userConfig || [];
+  </script>
+<script type="text/javascript" src="https://gss0.baidu.com/70cFsjip0QIZ8tyhnq/hunter/baike.js?st=17778" defer></script><script type="text/javascript">
+  // DOM Ready时，统计用户可操作时间。
+  alog('speed.set', 'drt', +new Date);
+
+  void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+</script>
+</html>
